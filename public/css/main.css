@@ -62,16 +62,11 @@ nav ul li:hover{
   cursor: pointer;
   cursor: hand;
 }
-li.dropdown:hover > ul.dropdown-menu,
-li.dropdown:focus > ul.dropdown-menu {
-    display: block;
-}
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
   color: #433409;
   background: rgba(255,255,255,.75);
   transition: all 0.25s ease;
 }
-
 .dropdown-menu{
   background: linear-gradient(to top,#fffaf2, #ffa302);
   border-radius: 0;
@@ -83,6 +78,16 @@ li.dropdown:focus > ul.dropdown-menu {
   margin:0;
   display: block;
 }
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.navbar-collapse.in{
+  overflow-y: visible;
+}
+
+
+
+
 
 #gmg-main-splash{
   background-image: url("./img/gold-moutain-gallery-splash.jpg");
@@ -161,6 +166,8 @@ li.dropdown:focus > ul.dropdown-menu {
   text-decoration: none;
   background-size: contain;
 }
+
+
 
 #gmg-link-tiles a:first-of-type{
   margin-left: 0;
