@@ -9,10 +9,11 @@ const Navbar = ({ changePage }) =>
         <img src="img/gold-mountain-gallery.jpg" alt="Gold Mountain Gallery" className="img-responsive" />
       </a>
     </div>
-    <button className="navbar-toggle collapsed" data-toggle="collapse" data-target="#gmg-nav-options">Open Close</button>
+    <button className="navbar-toggle collapsed btn btn-default" id="gmg-mobile-nav" data-toggle="collapse" data-target="#gmg-nav-options">
+      Menu
+    </button>
     
     <nav className="navbar" id="gmg-nav" role="navigation">
-    
       <div className="collapse navbar-collapse" id = "gmg-nav-options">
         <ul className="nav navbar-nav">
           <li className="dropdown">
