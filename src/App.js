@@ -28,16 +28,17 @@ class App extends Component {
     <div id="gmg-body">
     
     
-      <div id="gmg-main-splash"  style={{ 'background-image' : 'url(img/gold-mountain-gallery-splash.jpg)' }}>
-        <div className="container">
+      <div className="container-fluid">
+        <div id="gmg-main-splash" className="row" style={{ 'background-image' : 'url(img/gold-mountain-gallery-splash.jpg)' }}>
           <h1 className="display-on-dark">Tailored to your taste.</h1>
           <p className="body-on-dark">We bring exclusive craftsmanship and fine artistry to your home.</p>
         </div>
       </div>
       
       <div className="container">
-        <div id="gmg-artist-feature">
+        <div id="gmg-artist-feature" >
           <div className="row background-image" id="gmg-artist-feature-inner" style={{ 'background-image' : 'url(img/michelle-marocco-feature-background.jpg)' }}>
+            <div className="sm-overlay"></div>
             <div className="col-md-6 body-on-dark">
               <p>Featuring</p>
               <p id="gmg-feature-title" class="display-on-dark">Michelle Marocco</p>
