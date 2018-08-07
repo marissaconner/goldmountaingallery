@@ -60,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-
 /* Mobile nav bar icon, animated */
 .navbar-toggle,.navbar-toggle:hover, .navbar-toggle:focus {
   border: none;
@@ -191,13 +190,23 @@ nav ul li:hover{
   text-shadow: -1px 1px 3px #000000;
   color: #ffffff;
 }
-
 #gmg-artist-feature-inner{
   background: #555;
   padding: 2rem;
   font-size: 1.75rem;
   text-align: center;
   background-position: top right;
+  position: relative;
+}
+.sm-overlay{
+  position: absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+}
+@media only screen and (max-width:992px){
+  .sm-overlay{ background-color: rgba(25,20,0,.25); }
 }
 #gmg-artist-feature p{
   margin:0 0 1rem 0;
@@ -251,3 +260,8 @@ nav ul li:hover{
   text-shadow: 1px 1px 1px #c4c4c4;
 }
 .italic { font-style: italic; }
+
+
+.nav>li>a:focus, .nav>li>a:hover{
+  background-color: #ffffff !important;
+}
