@@ -197,6 +197,7 @@ nav ul li:hover{
   padding: 2rem;
   font-size: 1.75rem;
   text-align: center;
+  background-position: top right;
 }
 #gmg-artist-feature p{
   margin:0 0 1rem 0;
