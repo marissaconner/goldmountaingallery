@@ -10,7 +10,9 @@ const Navbar = ({ changePage }) =>
       </a>
     </div>
     <button className="navbar-toggle collapsed btn btn-default" id="gmg-mobile-nav" data-toggle="collapse" data-target="#gmg-nav-options">
-      Menu
+      <span className="icon-bar top-bar"></span>
+      <span className="icon-bar middle-bar"></span>
+      <span className="icon-bar bottom-bar"></span>
     </button>
     
     <nav className="navbar" id="gmg-nav" role="navigation">
