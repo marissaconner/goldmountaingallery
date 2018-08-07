@@ -15,12 +15,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #gmg-header{
-  margin: 1.5em 0;
+  margin: 1em 0;
 }
 #gmg-masthead {
   display: inline-block;  
   vertical-align: middle;
   width: 125px
+}
+#gmg-nav-menu{
+  display: inline-block;
+}
+@media only screen and (max-width: 992px){
+  #gmg-masthead, #gmg-nav-menu{
+    display: block;
+    margin: 0 auto;
+  }
+  #gmg-header{
+    margin: .5em 0;
+  }
 }
 
 #gmg-nav {
@@ -40,8 +52,9 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-/* Mobile nav bar icon, animated */
 
+
+/* Mobile nav bar icon, animated */
 .navbar-toggle,.navbar-toggle:hover, .navbar-toggle:focus {
   border: none;
   background: none;
@@ -90,7 +103,7 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
-  margin: 1em;
+  margin: 0 1em;
 }
 nav ul li:hover{
   cursor: pointer;
