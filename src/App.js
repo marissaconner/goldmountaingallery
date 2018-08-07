@@ -28,8 +28,8 @@ class App extends Component {
     <div id="gmg-body">
     
     
-      <div id="gmg-main-splash"  style={{ 'background-image' : 'url(img/gold-mountain-gallery-splash.jpg)' }}>
-        <div className="container">
+      <div className="container-fluid">
+        <div id="gmg-main-splash" className="row" style={{ 'background-image' : 'url(img/gold-mountain-gallery-splash.jpg)' }}>
           <h1 className="display-on-dark">Tailored to your taste.</h1>
           <p className="body-on-dark">We bring exclusive craftsmanship and fine artistry to your home.</p>
         </div>

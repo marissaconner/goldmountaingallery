@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: .5em 0;
   }
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
   #gmg-masthead{ 
     float: left; 
     z-index: 99; 
@@ -139,10 +139,6 @@ nav ul li:hover{
   overflow-y: visible;
 }
 
-
-
-
-
 #gmg-main-splash{
   background-image: url("./img/gold-moutain-gallery-splash.jpg");
   background: #473724;
@@ -154,6 +150,19 @@ nav ul li:hover{
   margin-bottom: 1.5em;
   position: relative;
 }
+
+#gmg-main-splash h1{ font-size: 6rem; letter-spacing: 5px; }
+#gmg-main-splash p{ font-size: 2.5rem; margin: 0 0 1rem 0; letter-spacing: 3px; }
+#gmg-main-splash h1, #gmg-main-splash p, #gmg-artist-feature p{ color: #ffffff; }
+
+  @media only screen and (max-width: 992px){
+    #gmg-main-splash{ padding: 9rem; }
+    #gmg-main-splash h1{ font-size: 4rem; letter-spacing: 5px; }
+    #gmg-main-splash p{ font-size: 2rem; margin: 0 0 1rem 0; letter-spacing: 3px; }
+  }
+  @media only screen and (max-width: 767px){
+    #gmg-main-splash{ padding: 3rem; margin-bottom: 0; }
+  }
 
 .gmg-infotiles {
   margin: 1em 0;
@@ -169,25 +178,19 @@ nav ul li:hover{
 }
 
 .display-on-dark{
-  font-size: 3rem;
   font-family: 'Montserrat Black', serif;
   font-style: normal;
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #ffffff;
   letter-spacing: 3px;
   text-shadow: -1px 1px 3px #000000;
   text-transform: uppercase;
 }
 .body-on-dark{
-  font-size:1.75rem;
   letter-spacing: 2px;
   text-shadow: -1px 1px 3px #000000;
   color: #ffffff;
 }
-
-#gmg-main-splash h1{ font-size: 6rem; letter-spacing: 5px; }
-#gmg-main-splash p{ font-size: 2.5rem; margin: 0 0 1rem 0; letter-spacing: 3px; }
-#gmg-main-splash h1, #gmg-main-splash p, #gmg-artist-feature p{ color: #ffffff; }
 
 #gmg-artist-feature-inner{
   background: #555;
