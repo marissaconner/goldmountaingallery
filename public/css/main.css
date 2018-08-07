@@ -34,6 +34,14 @@ h1, h2, h3, h4, h5, h6 {
     margin: .5em 0;
   }
 }
+@media only screen and (max-width: 768px){
+  #gmg-masthead{ 
+    float: left; 
+    z-index: 99; 
+    left: 0.5em;
+    width: 68px;
+  }
+}
 
 #gmg-nav {
   display: inline-block;
@@ -53,7 +61,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 /* Mobile nav bar icon, animated */
 .navbar-toggle,.navbar-toggle:hover, .navbar-toggle:focus {
   border: none;
@@ -67,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .navbar-toggle .top-bar {
   transform: rotate(45deg);
-  transform-origin: 1px 3px;
+  transform-origin: 2px 3px;
 }
 .navbar-toggle .middle-bar {
   opacity: 0;
