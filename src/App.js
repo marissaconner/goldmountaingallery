@@ -36,8 +36,9 @@ class App extends Component {
       </div>
       
       <div className="container">
-        <div id="gmg-artist-feature">
+        <div id="gmg-artist-feature" >
           <div className="row background-image" id="gmg-artist-feature-inner" style={{ 'background-image' : 'url(img/michelle-marocco-feature-background.jpg)' }}>
+            <div className="sm-overlay"></div>
             <div className="col-md-6 body-on-dark">
               <p>Featuring</p>
               <p id="gmg-feature-title" class="display-on-dark">Michelle Marocco</p>
