@@ -21,7 +21,7 @@ const Navbar = ({ changePage }) =>
             <li className="dropdown">
               <a href="#">About</a>
               <ul className="dropdown-menu">
-                <li><a href="#">Our Artists</a></li>
+                <li><a href="#" onClick={() => changePage("Artist")}>Our Artists</a></li>
                 <li><a href="#">Our Mission</a></li>
               </ul>
             </li>  
