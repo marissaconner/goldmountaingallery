@@ -1,38 +1,47 @@
 const artistdata = [
         { 
-          "src" : "matt-downer-bed.jpg",
-          "alt" : "A bed"
+          "imgname" : "bed",
+          "src"  : "matt-downer-bed.jpg",
+          "alt"  : "A bed"
         },
         { 
+          "imgname" : "bluemobile",
           "src" : "matt-downer-blue-mobile.jpg",
           "alt" : "A blue mobile"
         },
         { 
+          "imgname" : "chandelier",
           "src" : "matt-downer-chandelier.jpg",
           "alt" : "A chandelier"
         },
         {
+          "imgname" : "sculpted-chairs",
           "src" : "matt-downer-cherry-sculpted-dining-chairs.jpg",
           "alt" : "Cherry-wood sculpted dining chairs"
         },
         {
+          "imgname" : "drawers",
           "src" : "matt-downer-drawers.jpg",
           "alt" : "Custom set of drawers"
         },
         {
-          "src" : "matt-downer-lamp-detail.jpg",
-          "alt" : "A closeup of a lamp"
+          "imgname" : "shelves",
+          "src" : "matt-downer-shelving.jpg",
+          "alt" : "Shelves"
           
         },
         {
+          "imgname" : "lighting",
           "src" : "matt-downer-lighting.jpg",
           "alt" : "A chandelier with a rock accent"
         },
         {
+          "imgname" : "table",
           "src" : "matt-downer-table.jpg",
           "alt" : "A table"
         },
         {
+          "imgname" : "table-detail",
           "src" : "matt-downer-table-detail.jpg",
           "alt" : "A detail of metal accent on a wooden table"
         }

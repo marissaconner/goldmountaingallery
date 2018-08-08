@@ -1,13 +1,14 @@
 import React  from 'react';
     
-  const GalleryEntry = ({ src, alt }) =>
-    <div className='gmg-artist-gallery-thumbnail' data-toggle='modal' data-target='#gmg-gallery-modal'>  
-      <img src={ 'img/artists/matt-downer/' + src }  className='img-responsive' alt = { alt } />
+    
+  const GalleryEntry = ( { imgname, src, alt }) =>
+    <div className='gmg-artist-gallery-thumbnail' data-toggle='modal' data-target='#gmg-gallery-modal' >  
+      <img src={ 'img/artists/matt-downer/' + src }  className='img-responsive' alt = { alt } data-opens = {'#gallery-' + imgname } />
     </div>
  
-  const CarouselEntry = ({ src, alt}) =>
+  const CarouselEntry = ({ imgname, src, alt}) =>
     <div className="item">
-      <img src = { 'img/artists/matt-downer/' + src } alt = { alt } />
+      <img src = { 'img/artists/matt-downer/' + src } alt = { alt } id= {'gallery-' + imgname } />
     </div>
 
    
@@ -32,10 +33,11 @@ import React  from 'react';
               <div id='gmg-artist-carousel'   className='carousel slide carousel-fade'>
                 
                 <div className="carousel-inner">
+                  
                   <div className="item active">
-                    <img src="img/artists/matt-downer/matt-downer-blue-mobile.jpg" alt="Los Angeles" />
+                    <img src = 'img/artists/matt-downer/matt-downer-blue-mobile.jpg' alt = 'placeholder' />
                   </div>
-
+                  
                   {artistData.map(
                     (galleryEntry, index) =>
                       <CarouselEntry key = {index} {...galleryEntry} />
@@ -61,4 +63,5 @@ import React  from 'react';
       
     </div>
 
+  
 export default ArtistGallery;
