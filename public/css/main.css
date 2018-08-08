@@ -8,6 +8,11 @@ p {
   letter-spacing: .5px;
 }
 
+section{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 2px;
   font-family: 'Montserrat Black', serif;
@@ -270,10 +275,32 @@ nav ul li:hover{
   margin-left:0;
   padding-left: 0;
 }
-#gmg-artist-name{
-  margin-top: 0;
-  text-transform: uppercase;
+#gmg-artist-heading{
+  padding: 3em;
+  margin-bottom: 1em;
+  background: #433409;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px #000000;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: center center;
+ 
 }
+#gmg-artist-name{
+  margin: 0;
+  font-size: 3em;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: 6px;
+}
+#gmg-artist-tagline{
+  font-family: 'Playfair Display';
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
 
 .gmg-artist-gallery-thumbnail{
   width: 300px;
