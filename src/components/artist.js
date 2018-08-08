@@ -1,6 +1,7 @@
 import React from 'react'
+import ArtistGallery from './artistgallery.js';
 
-const Artist = () => 
+const Artist = ({artistData}) => 
   <div className="container">
     <div className='row'>
         <div className='col-md-12'>
@@ -24,55 +25,9 @@ const Artist = () =>
         </div>
       </div>
       
-       <div className='row' id='gmg-artist-gallery'>
-        <div className='col-xs-12 text-center'>
-          <div className='gmg-artist-gallery-thumbnail' data-toggle='modal' data-target='#gmg-gallery-modal'>
-            <img src='img/artists/matt-downer/matt-downer-blue-mobile.jpg' className='img-responsive' />
-          </div>
-        </div>
-      </div>
+      <ArtistGallery artistData={artistData} />
       
-      <div className='center-center-container' >      
-        <div id='gmg-gallery-modal' className='modal fade' tabindex='-1' role='dialog'  aria-hidden='true'>
-        
-          <div className='vh-align-helper'>
-            <div className='modal-dialog vh-align-center' >
-              <div id='gmg-artist-carousel'   className='carousel slide carousel-fade'>
-                <ol className="carousel-indicators">
-                  <li data-target="#gmg-artist-carousel" data-slide-to="0" className="active"></li>
-                  <li data-target="#gmg-artist-carousel" data-slide-to="1"></li>
-                  <li data-target="#gmg-artist-carousel" data-slide-to="2"></li>
-                </ol>
-                
-                <div className="carousel-inner"  style={{ 'transition' : 'height 0.25s ease;' }} >
-                  <div className="item active">
-                    <img src="img/artists//matt-downer/matt-downer-blue-mobile.jpg" alt="Los Angeles" />
-                  </div>
-
-                  <div className="item">
-                    <img src="img/artists/matt-downer/matt-downer-cherry-sculpted-dining-chairs.jpg" alt="Chicago" />
-                  </div>
-
-                  <div className="item">
-                    <img src="img/artists//matt-downer/matt-downer-bed.jpg" alt="New York" />
-                  </div>
-                </div>
-       
-                <a className="left carousel-control" href="#gmg-artist-carousel" data-slide="prev">
-                  <span className="glyphicon glyphicon-chevron-left"></span>
-                  <span className="sr-only">Previous</span>
-                </a>
-                <a className="right carousel-control" href="#gmg-artist-carousel" data-slide="next">
-                  <span className="glyphicon glyphicon-chevron-right"></span>
-                  <span className="sr-only">Next</span>
-                </a>
-              </div>
-            </div>
-          </div>
-            
-       
-        </div>
-      </div>
+      
   </div>
 
 export default Artist
