@@ -30,11 +30,6 @@ import React  from 'react';
           <div className='vh-align-helper'>
             <div className='modal-dialog vh-align-center' >
               <div id='gmg-artist-carousel'   className='carousel slide carousel-fade'>
-                <ol className="carousel-indicators">
-                  <li data-target="#gmg-artist-carousel" data-slide-to="0" className="active"></li>
-                  <li data-target="#gmg-artist-carousel" data-slide-to="1"></li>
-                  <li data-target="#gmg-artist-carousel" data-slide-to="2"></li>
-                </ol>
                 
                 <div className="carousel-inner">
                   <div className="item active">
