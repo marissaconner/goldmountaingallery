@@ -1,36 +1,31 @@
-import React, { Component } from "react";
-import "./App.css";
-import Navbar from "./components/navbar.js";
-import PageContent from "./components/pagecontent.js";
+import React, { Component } from 'react';
+import {render} from 'react-dom';
+import { Switch , BrowserRouter, Route } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/navbar.js';
+import Homepage from './components/homepage.js';
+import Artist from './components/artist.js'
+import ArtistData from './data/artistdata.js';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      currentPage: "home"
-    };
-    this.changePage = this.changePage.bind(this);
-  }
-
-  changePage(currentPage) {
-    this.setState({ currentPage });
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="container">
-          <header id="gmg-header">
-            <Navbar changePage={this.changePage} />
-          </header>
-        </div>
-
-        <div id="gmg-body">
-          <PageContent currentPage={this.state.currentPage} />
-        </div>
+const App = () => (
+    <div>
+      <div className="container">
+        <header id="gmg-header">  
+          <Navbar />
+        </header>
+      </div>  
+            
+      <div id="gmg-body">
+        <BrowserRouter>
+          <Switch>
+            <Route path ="/artist">
+              <Artist artistData={ArtistData} />
+            </Route>
+            <Route component = {Homepage} />
+          </Switch>
+        </BrowserRouter>
       </div>
-    );
-  }
-}
+    </div>
+)
 
 export default App;
