@@ -1,11 +1,11 @@
 import React from 'react';
 import pages from '../data/pages'
 
-const Navbar = ({ changePage }) => 
+const Navbar = () => 
  
   <div className="container" id="gmg-header">
     <div id="gmg-masthead">
-      <a href="#">
+      <a href="/">
         <img src="img/gold-mountain-gallery.jpg" alt="Gold Mountain Gallery" className="img-responsive" />
       </a>
     </div>
@@ -21,7 +21,7 @@ const Navbar = ({ changePage }) =>
             <li className="dropdown">
               <a href="#">About</a>
               <ul className="dropdown-menu">
-                <li><a href="#" onClick={() => changePage("Artist")}>Our Artists</a></li>
+                <li><a href="artist">Our Artists</a></li>
                 <li><a href="#">Our Mission</a></li>
               </ul>
             </li>  
