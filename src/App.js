@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/navbar.js";
-import Homepage from "./components/homepage.js";
-import NotFound from "./components/notfound.js";
-import Artist from "./components/artist.js";
-import artistData from "./data/artistdata.js";
+import Navbar from "./components/Navbar";
+import Homepage from "./components/Homepage";
+import NotFound from "./components/NotFound";
+import Artist from "./components/Artist";
+import artistData from "./data/artist-data";
 
 const ArtistContainer = ({
   match: {

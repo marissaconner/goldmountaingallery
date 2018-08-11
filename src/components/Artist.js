@@ -1,5 +1,5 @@
 import React from "react";
-import GalleryContainer from "./artistgallery.js";
+import GalleryContainer from "./ArtistGallery";
 import Parser from "html-react-parser";
 
 const Artist = ({ artistData }) => (
