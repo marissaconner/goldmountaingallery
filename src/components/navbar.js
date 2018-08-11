@@ -1,51 +1,72 @@
-import React from 'react';
-import pages from '../data/pages'
+import React from "react";
 
-const Navbar = () => 
- 
+const Navbar = () => (
   <div className="container" id="gmg-header">
     <div id="gmg-masthead">
       <a href="/">
-        <img src="/img/gold-mountain-gallery.jpg" alt="Gold Mountain Gallery" className="img-responsive" />
+        <img
+          src="/img/gold-mountain-gallery.jpg"
+          alt="Gold Mountain Gallery"
+          className="img-responsive"
+        />
       </a>
     </div>
-    <div id="gmg-nav-menu">   
-      <button className="navbar-toggle collapsed btn" id="gmg-mobile-nav" data-toggle="collapse" data-target="#gmg-nav-options">
-        <span className="icon-bar top-bar"></span>
-        <span className="icon-bar middle-bar"></span>
-        <span className="icon-bar bottom-bar"></span>
+    <div id="gmg-nav-menu">
+      <button
+        className="navbar-toggle collapsed btn"
+        id="gmg-mobile-nav"
+        data-toggle="collapse"
+        data-target="#gmg-nav-options"
+      >
+        <span className="icon-bar top-bar" />
+        <span className="icon-bar middle-bar" />
+        <span className="icon-bar bottom-bar" />
       </button>
-      <nav className="navbar" id="gmg-nav" role="navigation">
-        <div className="collapse navbar-collapse" id = "gmg-nav-options">
+      <nav className="navbar" id="gmg-nav">
+        <div className="collapse navbar-collapse" id="gmg-nav-options">
           <ul className="nav navbar-nav">
             <li className="dropdown">
-              <a href="#">About</a>
+              <a>About</a>
               <ul className="dropdown-menu">
-                <li><a href="artist">Our Artists</a></li>
-                <li><a href="#">Our Mission</a></li>
+                <li>
+                  <a href="/artists">Our Artists</a>
+                </li>
+                <li>
+                  <a>Our Mission</a>
+                </li>
               </ul>
-            </li>  
+            </li>
             <li className="dropdown">
-              <a href="#">Beautiful Things</a>
+              <a>Beautiful Things</a>
               <ul className="dropdown-menu">
-                <li><a href="#">Fine Artwork</a></li>
-                <li><a href="#">Jewelry</a></li>
-                 <li><a href="#">Lighting</a></li>
-                <li><a href="#">Photography</a></li>
-                <li><a href="#">Woodworking</a></li>
+                <li>
+                  <a>Fine Artwork</a>
+                </li>
+                <li>
+                  <a>Jewelry</a>
+                </li>
+                <li>
+                  <a>Lighting</a>
+                </li>
+                <li>
+                  <a>Photography</a>
+                </li>
+                <li>
+                  <a>Woodworking</a>
+                </li>
               </ul>
             </li>
             <li>
-              <a href="#">Events</a>
+              <a>Events</a>
             </li>
             <li>
-              <a href="#">Get In Touch</a>
+              <a>Get In Touch</a>
             </li>
           </ul>
         </div>
       </nav>
     </div>
   </div>
-   
-    
+);
+
 export default Navbar;
