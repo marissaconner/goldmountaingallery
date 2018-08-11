@@ -3,10 +3,7 @@ import GalleryContainer from "./artistgallery.js";
 import Parser from "html-react-parser";
   
 
-const Artist = (props) => {
-
-const artistData = props.artistData
-  return (
+const Artist = ({ artistData }) => 
   <article>
     <div className="container-fluid">
       <div className="row">
@@ -46,8 +43,5 @@ const artistData = props.artistData
       </section>
     </div>
   </article>
-)
-
-}
 
 export default Artist;
