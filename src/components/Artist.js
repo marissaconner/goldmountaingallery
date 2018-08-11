@@ -1,16 +1,15 @@
 import React from "react";
-import GalleryContainer from "./artistgallery.js";
+import GalleryContainer from "./ArtistGallery";
 import Parser from "html-react-parser";
-  
 
-const Artist = ({ artistData }) => 
+const Artist = ({ artistData }) => (
   <article>
     <div className="container-fluid">
       <div className="row">
         <div
           id="gmg-artist-heading"
           style={{
-            backgroundImage: `url(${artistData.bannerSrc})`,
+            backgroundImage: `url(${artistData.bannerSrc})`
           }}
         >
           <h1 id="gmg-artist-name">
@@ -43,5 +42,6 @@ const Artist = ({ artistData }) =>
       </section>
     </div>
   </article>
+);
 
 export default Artist;
