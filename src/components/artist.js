@@ -3,14 +3,17 @@ import GalleryContainer from "./artistgallery.js";
 import Parser from "html-react-parser";
   
 
-const Artist = ({ artistData }) => (
+const Artist = (props) => {
+
+const artistData = props.artistData
+  return (
   <article>
     <div className="container-fluid">
       <div className="row">
         <div
           id="gmg-artist-heading"
           style={{
-            backgroundImage: {artistData.bannerUrl}
+            backgroundImage: `url(${artistData.bannerSrc})`,
           }}
         >
           <h1 id="gmg-artist-name">
@@ -30,7 +33,7 @@ const Artist = ({ artistData }) => (
               id="gmg-artist-portrait"
               className="col-md-5 col-sm-12 pull-left img-responsive"
               src={artistData.portraitSrc}
-              alt=
+              alt={`${artistData.firstName} ${artistData.lastName} portrait`}
             />
             {Parser(artistData.bioText)}
           </div>
@@ -43,6 +46,8 @@ const Artist = ({ artistData }) => (
       </section>
     </div>
   </article>
-);
+)
+
+}
 
 export default Artist;

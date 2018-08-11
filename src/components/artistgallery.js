@@ -41,7 +41,7 @@ const GalleryEntry = ({ imgname, src, alt, clickHandler, index }) => (
     }}
   >
     <img
-      src={"img/artists/matt-downer/" + src}
+      src={"/img/artists/matt-downer/" + src}
       className="img-responsive"
       alt={alt}
       data-opens={"#gallery-" + imgname}
@@ -52,7 +52,7 @@ const GalleryEntry = ({ imgname, src, alt, clickHandler, index }) => (
 const CarouselEntry = ({ imgname, src, alt, isActive }) => (
   <div className={`item ${isActive ? "active" : ""}`}>
     <img
-      src={"img/artists/matt-downer/" + src}
+      src={"/img/artists/matt-downer/" + src}
       alt={alt}
       id={"gallery-" + imgname}
     />
