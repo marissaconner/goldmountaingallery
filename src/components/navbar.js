@@ -6,7 +6,7 @@ const Navbar = () =>
   <div className="container" id="gmg-header">
     <div id="gmg-masthead">
       <a href="/">
-        <img src="img/gold-mountain-gallery.jpg" alt="Gold Mountain Gallery" className="img-responsive" />
+        <img src="/img/gold-mountain-gallery.jpg" alt="Gold Mountain Gallery" className="img-responsive" />
       </a>
     </div>
     <div id="gmg-nav-menu">   

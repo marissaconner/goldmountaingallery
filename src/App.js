@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
 import {render} from 'react-dom';
-import { Switch , BrowserRouter, Route } from 'react-router-dom';
+import { Switch , BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/navbar.js';
 import Homepage from './components/homepage.js';
 import NotFound from './components/notfound.js';
 import Artist from './components/artist.js'
-import ArtistData from './data/artistdata.js';
+import artistData from './data/artistdata.js';
+
+const ArtistContainer = ({ match: { params: { artistId } } }) =>
+  <Artist artistData={artistData[artistId]} />
+
+const PickArtist = () =>
+  <div>
+    {Object.keys(artistData).map(artist =>
+        <Link to={`/artist/${artist}`} >
+          {`${artistData[artist].firstName} ${artistData[artist].lastName}`}
+        </Link>
+    )}
+  </div>
 
 const App = () => (
     <div>
@@ -20,9 +32,8 @@ const App = () => (
         <BrowserRouter>
           <Switch>
             <Route exact path = "/" component = {Homepage} />
-            <Route path ="/artist">
-              <Artist artistData={ArtistData} />
-            </Route>
+            <Route path="/artists" component={PickArtist} />
+            <Route path="/artist/:artistId" component={ArtistContainer}/>
             <Route component = {NotFound} />
           </Switch>
         </BrowserRouter>
