@@ -11,8 +11,12 @@ const ArtistContainer = ({
   match: {
     params: { artistId }
   }
-}) => <Artist artistData={artistData[artistId]} />;
-
+}) => {
+  if (!artistData[artistId]) {
+    return <NotFound />
+  }
+  return <Artist artistData={artistData[artistId]} />
+}
 const PickArtist = () => (
   <div>
     {Object.keys(artistData).map(artist => (
@@ -34,7 +38,14 @@ const App = () => (
     <div id="gmg-body">
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route exact path="/">
+            <Homepage featuredArtist={{
+              _id: 'michelle-marocco',
+              backgroundImage: "url(img/michelle-marocco-feature-background.jpg)",
+              name: "Michelle Marocco",
+              galleryHref: "/artist/michelle-marocco",
+            }} />
+          </Route>
           <Route path="/artists" component={PickArtist} />
           <Route path="/artist/:artistId" component={ArtistContainer} />
           <Route component={NotFound} />

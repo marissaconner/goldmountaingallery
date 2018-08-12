@@ -1,6 +1,6 @@
 import React from "react";
 
-const Homepage = () => (
+const Homepage = ({ featuredArtist }) => (
   <div>
     <div className="container-fluid">
       <div
@@ -21,17 +21,17 @@ const Homepage = () => (
           className="row background-image"
           id="gmg-artist-feature-inner"
           style={{
-            backgroundImage: "url(img/michelle-marocco-feature-background.jpg)"
+            backgroundImage: featuredArtist.backgroundImage,
           }}
         >
           <div className="sm-overlay" />
           <div className="col-md-6 body-on-dark">
             <p>Featuring</p>
             <p id="gmg-feature-title" className="display-on-dark">
-              Michelle Marocco
+              {featuredArtist.name}
             </p>
             <p>Hand-made jewelry and fine artwork</p>
-            <a className="btn btn-ghost">
+            <a href={featuredArtist.galleryHref} className="btn btn-ghost">
               Gallery
             </a>
           </div>
