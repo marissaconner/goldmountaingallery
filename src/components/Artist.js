@@ -1,6 +1,6 @@
 import React from "react";
 import GalleryContainer from "./ArtistGallery";
-import Parser from "html-react-parser";
+import htmlToReact from "html-react-parser";
 
 const Artist = ({ artistData }) => (
   <article>
@@ -31,7 +31,7 @@ const Artist = ({ artistData }) => (
               src={artistData.portraitSrc}
               alt={`${artistData.firstName} ${artistData.lastName} portrait`}
             />
-            {Parser(artistData.bioText)}
+            {htmlToReact(artistData.bioText)}
           </div>
         </div>
       </section>
