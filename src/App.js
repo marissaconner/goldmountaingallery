@@ -11,8 +11,12 @@ const ArtistContainer = ({
   match: {
     params: { artistId }
   }
-}) => <Artist artistData={artistData[artistId]} />;
-
+}) => {
+  if (!artistData[artistId]) {
+    return <NotFound />
+  }
+  return <Artist artistData={artistData[artistId]} />
+}
 const PickArtist = () => (
   <div>
     {Object.keys(artistData).map(artist => (
