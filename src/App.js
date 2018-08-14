@@ -7,7 +7,7 @@ import Homepage from "./components/Homepage";
 import NotFound from "./components/NotFound";
 import Artist from "./components/Artist";
 import Contact from "./components/Contact";
-import Testimonials from "./components/Testimonials";
+import Testimonial from "./components/Testimonial";
 
 import testimonialData from "./data/testimonial-data";
 import artistData from "./data/artist-data";
@@ -29,6 +29,17 @@ const PickArtist = () => (
         {`${artistData[artist].firstName} ${artistData[artist].lastName}`}
       </Link>
     ))}
+  </div>
+);
+
+const ListTestimonials = () => (
+  <div className="container">
+    <div className="row">
+      <h1 className="text-center">Testimonials</h1>
+      {testimonialData.map((testimonialEntry, index) => (
+        <Testimonial key={index} {...testimonialEntry} />
+      ))}
+    </div>
   </div>
 );
 
@@ -55,11 +66,7 @@ const App = () => (
             />
           </Route>
           <Route exact path="/contact" component={Contact} />
-          <Route
-            path="/testimonials"
-            component={Testimonials}
-            testimonialData={testimonialData}
-          />
+          <Route path="/testimonials" component={ListTestimonials} />
           <Route path="/artists" component={PickArtist} />
           <Route path="/artist/:artistId" component={ArtistContainer} />
           <Route component={NotFound} />

@@ -7,6 +7,14 @@ p {
   font-weight: 300;
   letter-spacing: .5px;
 }
+a{
+  text-decoration: none;
+  color: #ffa302;
+}
+a:hover{
+  text-decoration: none;
+  color: #e89300;
+}
 
 section{
   margin-top: 1em;
@@ -353,4 +361,15 @@ nav ul li:hover{
   height: 100%;
   width: 100%;
   pointer-events: none;
+}
+
+.testimonialsignature{
+  margin-top: 1em;
+  text-align: right;
+  font-style: italic;
+}
+.testimonialsignature p{
+  font-weight: bold;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
 }
