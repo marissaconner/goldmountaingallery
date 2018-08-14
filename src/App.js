@@ -1,12 +1,16 @@
 import React from "react";
 import { Switch, BrowserRouter, Route, Link } from "react-router-dom";
 import "./App.css";
+
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 import NotFound from "./components/NotFound";
 import Artist from "./components/Artist";
-import artistData from "./data/artist-data";
 import Contact from "./components/Contact";
+import Testimonials from "./components/Testimonials";
+
+import testimonialData from "./data/testimonial-data";
+import artistData from "./data/artist-data";
 
 const ArtistContainer = ({
   match: {
@@ -51,6 +55,11 @@ const App = () => (
             />
           </Route>
           <Route exact path="/contact" component={Contact} />
+          <Route
+            path="/testimonials"
+            component={Testimonials}
+            testimonialData={testimonialData}
+          />
           <Route path="/artists" component={PickArtist} />
           <Route path="/artist/:artistId" component={ArtistContainer} />
           <Route component={NotFound} />
