@@ -373,3 +373,37 @@ nav ul li:hover{
   font-weight: 900;
   font-family: 'Montserrat', sans-serif;
 }
+
+.artist-link{
+  display: inline-block;
+  background: #c4c4c4;
+  margin: 2em;
+  width: 250px;
+  height: 250px;
+  line-height:250px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 99;
+}
+.artist-link-heading:hover:before{
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,163,2,.25);
+}
+
+.artist-link-heading{
+  text-transform: uppercase;
+  font-family: 'Montserrat Black', sans-serif;
+  font-weight: bold;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: -1px 1px 3px #000000;
+  }

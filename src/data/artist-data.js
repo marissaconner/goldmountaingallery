@@ -1,3 +1,20 @@
+const michelleMarocco = {
+  _id: "michelle-marocco",
+  firstName: "Michelle",
+  lastName: "Marocco",
+  bioText: "<p>Biotext placeholder.</p>",
+  tagline: "Diamond and leather jewelry",
+  bannerSrc: "img/artists/michelle-marocco/michelle-marocco-banner.jpg",
+  portraitSrc: "img/artists/michelle-marocco/michelle-marocco=portrait.jpg",
+  galleryItems: [
+    {
+      imgname: "placeholder",
+      src: "michelle-marocco-placeholder.jpg",
+      alt: "Alt placeholder"
+    }
+  ]
+};
+
 const mattDowner = {
   _id: "matt-downer",
   firstName: "Matt",
@@ -57,7 +74,8 @@ const mattDowner = {
 };
 
 const artistData = {
-  [mattDowner._id]: mattDowner
+  [mattDowner._id]: mattDowner,
+  [michelleMarocco._id]: michelleMarocco
 };
 
 export default artistData;

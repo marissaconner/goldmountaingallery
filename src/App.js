@@ -23,10 +23,16 @@ const ArtistContainer = ({
   return <Artist artistData={artistData[artistId]} />;
 };
 const PickArtist = () => (
-  <div>
+  <div className="container text-center">
     {Object.keys(artistData).map(artist => (
-      <Link to={`/artist/${artist}`}>
-        {`${artistData[artist].firstName} ${artistData[artist].lastName}`}
+      <Link
+        to={`/artist/${artist}`}
+        className="artist-link"
+        style={{ backgroundImage: `url(${artistData[artist].bannerSrc})` }}
+      >
+        <p className="artist-link-heading">{`${artistData[artist].firstName} ${
+          artistData[artist].lastName
+        }`}</p>
       </Link>
     ))}
   </div>
