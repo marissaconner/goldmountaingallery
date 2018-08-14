@@ -6,6 +6,7 @@ import Homepage from "./components/Homepage";
 import NotFound from "./components/NotFound";
 import Artist from "./components/Artist";
 import artistData from "./data/artist-data";
+import Contact from "./components/Contact";
 
 const ArtistContainer = ({
   match: {
@@ -13,10 +14,10 @@ const ArtistContainer = ({
   }
 }) => {
   if (!artistData[artistId]) {
-    return <NotFound />
+    return <NotFound />;
   }
-  return <Artist artistData={artistData[artistId]} />
-}
+  return <Artist artistData={artistData[artistId]} />;
+};
 const PickArtist = () => (
   <div>
     {Object.keys(artistData).map(artist => (
@@ -39,13 +40,17 @@ const App = () => (
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Homepage featuredArtist={{
-              _id: 'michelle-marocco',
-              backgroundImage: "url(img/michelle-marocco-feature-background.jpg)",
-              name: "Michelle Marocco",
-              galleryHref: "/artist/michelle-marocco",
-            }} />
+            <Homepage
+              featuredArtist={{
+                _id: "michelle-marocco",
+                backgroundImage:
+                  "url(img/michelle-marocco-feature-background.jpg)",
+                name: "Michelle Marocco",
+                galleryHref: "/artist/michelle-marocco"
+              }}
+            />
           </Route>
+          <Route exact path="/contact" component={Contact} />
           <Route path="/artists" component={PickArtist} />
           <Route path="/artist/:artistId" component={ArtistContainer} />
           <Route component={NotFound} />

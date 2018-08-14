@@ -60,7 +60,7 @@ const Navbar = () => (
               <a>Events</a>
             </li>
             <li>
-              <a>Get In Touch</a>
+              <a href="/contact">Get In Touch</a>
             </li>
           </ul>
         </div>
