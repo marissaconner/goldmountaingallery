@@ -8,9 +8,9 @@ import NotFound from "./components/NotFound";
 import Artist from "./components/Artist";
 import Contact from "./components/Contact";
 import Testimonial from "./components/Testimonial";
-
 import testimonialData from "./data/testimonial-data";
 import artistData from "./data/artist-data";
+import MainGallery from "./components/MainGallery";
 
 const ArtistContainer = ({
   match: {
@@ -49,6 +49,13 @@ const ListTestimonials = () => (
   </div>
 );
 
+const MainGalleryContainer = () => (
+  <div>
+    <p>Main gallery container</p>
+    <MainGallery artistData={artistData} />
+  </div>
+);
+
 const App = () => (
   <div>
     <div className="container">
@@ -71,6 +78,7 @@ const App = () => (
               }}
             />
           </Route>
+          <Route path="/gallery" component={MainGalleryContainer} />
           <Route exact path="/contact" component={Contact} />
           <Route path="/testimonials" component={ListTestimonials} />
           <Route path="/artists" component={PickArtist} />
