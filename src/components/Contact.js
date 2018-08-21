@@ -21,6 +21,8 @@ class Contact extends Component {
     super(props);
 
     this.state = {
+      lambdaLoading: false,
+      lamdaMessage: null,
       sendattempted: false,
       sendsuccessful: null,
       name: "",
@@ -123,15 +125,22 @@ class Contact extends Component {
     data.subject = this.state.subject;
     data.message = this.state.message;
 
-    this.setState({ sendattempted: true });
-
+    this.setState({ lambdaLoading: true });
+    fetch("/.netlify/functions/hello")
+      .then(response => response.json())
+      .then(json =>
+        this.setState({ lambdaLoading: false, lambdaMessage: json.msg })
+      );
     console.log("Submit function");
   };
 
   render() {
+    const { lambdaLoading, lambdaMessage } = this.state;
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
+        <p>{lambdaLoading ? "Loading..." : "Call Lambda"}</p>
+        <p>{lambdaMessage}</p>
         <form onSubmit={this.handleSubmit} className="form">
           <div
             className={`form-group ${this.hasErrorClass(
