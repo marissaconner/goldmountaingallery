@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-sdk": "^2.299.0",
     "eslint-plugin-react": "^7.10.0",
     "html-react-parser": "^0.4.6",
-    "netlify-lambda": "^0.3.0",
+    "netlify-lambda": "^0.4.0",
     "react": "^16.4.2",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.2",

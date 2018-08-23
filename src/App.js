@@ -57,6 +57,16 @@ const App = () => (
       </header>
     </div>
 
+    <button
+      onClick={() => {
+        fetch("/.netlify/functions/hello")
+          .then(response => response.json())
+          .then(json => console.log(JSON.stringify(json)));
+      }}
+    >
+      Hello
+    </button>
+
     <div id="gmg-body">
       <BrowserRouter>
         <Switch>
