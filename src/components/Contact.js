@@ -116,17 +116,29 @@ class Contact extends Component {
     });
   };
 
+  fu;
+
   handleSubmit = e => {
+    var data = {
+      subject: this.state.subject,
+      message:
+        this.state.name +
+        "is sending you the following email: " +
+        this.state.message +
+        "<br /><br />To respond, please send an email to: " +
+        this.state.email
+    };
     e.preventDefault();
-    var data = {};
     var url = "/api/sendmail";
-    data.name = this.state.name;
-    data.email = this.state.email;
-    data.subject = this.state.subject;
-    data.message = this.state.message;
 
     this.setState({ lambdaLoading: true });
-    fetch("/.netlify/functions/hello")
+    fetch("/.netlify/functions/hello", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
       .then(response => response.json())
       .then(json =>
         this.setState({ lambdaLoading: false, lambdaMessage: json.msg })

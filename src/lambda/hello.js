@@ -6,7 +6,9 @@ var ses = new aws.SES({
 });
 
 export function handler(event, context) {
-  console.log("Incoming: ", event);
+  console.log("===Incoming:===");
+
+  var email = JSON.parse(event.body);
 
   var eParams = {
     Destination: {
@@ -15,11 +17,11 @@ export function handler(event, context) {
     Message: {
       Body: {
         Text: {
-          Data: "Test message what is up"
+          Data: email.message
         }
       },
       Subject: {
-        Data: "Email Subject!"
+        Data: email.subject
       }
     },
     Source: "goldmountaingalleryemailer@gmail.com"
@@ -31,9 +33,6 @@ export function handler(event, context) {
       console.log(err);
     } else {
       console.log("===EMAIL SENT===");
-      console.log("EMAIL CODE END");
-      console.log("EMAIL: ", email);
-      console.log(data);
     }
   });
 }
