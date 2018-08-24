@@ -116,20 +116,19 @@ class Contact extends Component {
     });
   };
 
-  fu;
-
   handleSubmit = e => {
+    e.preventDefault();
+    var bodymessage =
+      this.state.name +
+      "is sending you the following message: \r\n\r\n" +
+      this.state.message +
+      "To respond, please send an email to: " +
+      this.state.email;
+
     var data = {
       subject: this.state.subject,
-      message:
-        this.state.name +
-        "is sending you the following email: " +
-        this.state.message +
-        "<br /><br />To respond, please send an email to: " +
-        this.state.email
+      message: bodymessage
     };
-    e.preventDefault();
-    var url = "/api/sendmail";
 
     this.setState({ lambdaLoading: true });
     fetch("/.netlify/functions/hello", {
