@@ -35,7 +35,7 @@ class MainGallery extends Component {
           <div>
             <img
               className="img-responsive"
-              src={`/img/artists/${image.src}`}
+              src={`/img/artists/${image.artistid}/${image.src}`}
               alt={image.alt}
             />
           </div>
