@@ -97,8 +97,63 @@ const kaneScheidegger = {
   portraitSrc: "/img/artists/kane-scheidegger/kane-scheidegger-portrait.jpg",
   galleryItems: [
     {
+      imgname: "Aspen Grove",
+      src: "kane-scheidegger-aspen-forest.jpg",
+      alt: "An aspen grove by photographer Kane Scheidegger."
+    },
+    {
       imgname: "placeholder",
-      src: "kane-scheidegger-placeholder.jpg",
+      src: "kane-scheidegger-avalanche.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "Sneffels Mountain Range",
+      src: "kane-scheidegger-black-and-white-mountains.jpg",
+      alt: "Sneffels mountain range by photographer Kane Scheidegger."
+    },
+    {
+      imgname: "Blue Spruce",
+      src: "kane-scheidegger-blue-spruce.jpg",
+      alt: "Blue Spruce in winter by photographer Kane Scheidegger."
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-colorado-mountain-valley.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-mountain-lake.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-mountain-range.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-mount-wilson.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-san-juan-river.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-ski-slopes.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-sunset-lake.jpg",
+      alt: "Alt placeholder"
+    },
+    {
+      imgname: "placeholder",
+      src: "kane-scheidegger-telluride.jpg",
       alt: "Alt placeholder"
     }
   ]
