@@ -38,10 +38,7 @@ const Artist = ({ artistData }) => (
 
       <section>
         <h2 className="text-center">Gallery</h2>
-        <GalleryContainer
-          artistName={`${artistData.firstName}-${artistData.lastName}`}
-          galleryItems={artistData.galleryItems}
-        />
+        <GalleryContainer galleryItems={artistData.galleryItems} />
       </section>
     </div>
   </article>

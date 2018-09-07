@@ -1,6 +1,6 @@
 import React from "react";
 
-const Modal = ({ artistName, galleryItems, activeCarouselIndex }) => (
+const Modal = ({ galleryItems, activeCarouselIndex }) => (
   <div className="center-center-container">
     <div
       id="gmg-gallery-modal"
@@ -19,7 +19,6 @@ const Modal = ({ artistName, galleryItems, activeCarouselIndex }) => (
               {galleryItems.map((galleryEntry, index) => (
                 <CarouselEntry
                   key={index}
-                  artistName={artistName}
                   isActive={index === activeCarouselIndex}
                   {...galleryEntry}
                 />
@@ -32,14 +31,7 @@ const Modal = ({ artistName, galleryItems, activeCarouselIndex }) => (
   </div>
 );
 
-const GalleryEntry = ({
-  artistName,
-  imgname,
-  src,
-  alt,
-  clickHandler,
-  index
-}) => (
+const GalleryEntry = ({ imgname, src, alt, clickHandler, index }) => (
   <div
     className="gmg-artist-gallery-thumbnail"
     data-toggle="modal"
@@ -49,7 +41,7 @@ const GalleryEntry = ({
     }}
   >
     <img
-      src={"/img/artists/" + artistName + "/" + src}
+      src={"/img/artists/matt-downer/" + src}
       className="img-responsive"
       alt={alt}
       data-opens={"#gallery-" + imgname}
@@ -57,23 +49,22 @@ const GalleryEntry = ({
   </div>
 );
 
-const CarouselEntry = ({ artistName, imgname, src, alt, isActive }) => (
+const CarouselEntry = ({ imgname, src, alt, isActive }) => (
   <div className={`item ${isActive ? "active" : ""}`}>
     <img
-      src={"/img/artists/" + artistName + "/" + src}
+      src={"/img/artists/matt-downer/" + src}
       alt={alt}
       id={"gallery-" + imgname}
     />
   </div>
 );
 
-const ArtistGallery = ({ artistName, clickHandler, galleryItems }) => (
+const ArtistGallery = ({ clickHandler, galleryItems }) => (
   <div className="row" id="gmg-artist-gallery">
     <div className="col-xs-12 text-center">
       {galleryItems.map((galleryEntry, index) => (
         <GalleryEntry
           key={index}
-          artistName={artistName}
           index={index}
           clickHandler={clickHandler}
           {...galleryEntry}
@@ -100,12 +91,10 @@ class GalleryContainer extends React.Component {
         <ArtistGallery
           clickHandler={this.clickHandler}
           galleryItems={this.props.galleryItems}
-          artistName={this.props.artistName}
         />
         <Modal
           galleryItems={this.props.galleryItems}
           activeCarouselIndex={this.state.modal.activeCarouselIndex}
-          artistName={this.props.artistName}
         />
       </div>
     );
