@@ -12,8 +12,13 @@ class MainGallery extends Component {
       /*Go through each of the artist data's galleries and deliver image[i] if it exists */
       for (var i2 = 0; i2 < artistArray.length; i2++) {
         var nextImage = props.artistData[artistArray[i2]].galleryItems[i];
-        if (nextImage !== undefined) {
+        nextImage = { ...nextImage, artistid: artistArray[i2] };
+        console.log(nextImage);
+        if (nextImage.src !== undefined) {
+          /*Stop sorting through artists that have insufficient images.*/
           imageList.push(nextImage);
+        } else {
+          artistArray.splice(i2, 1);
         }
       }
     }
@@ -28,7 +33,11 @@ class MainGallery extends Component {
       <div>
         {this.state.images.map(image => (
           <div>
-            <img className="img-responsive" src={image.src} alt={image.alt} />
+            <img
+              className="img-responsive"
+              src={`/img/artists/${image.src}`}
+              alt={image.alt}
+            />
           </div>
         ))}
       </div>
