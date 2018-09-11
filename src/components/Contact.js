@@ -120,9 +120,9 @@ class Contact extends Component {
     e.preventDefault();
     var bodymessage =
       this.state.name +
-      "is sending you the following message: \r\n\r\n" +
+      " is sending you the following message: \r\n\r\n" +
       this.state.message +
-      "To respond, please send an email to: " +
+      "\r\n\r\n To respond, please send an email to: " +
       this.state.email;
 
     var data = {
@@ -139,9 +139,9 @@ class Contact extends Component {
       body: JSON.stringify(data)
     })
       .then(response => response.json())
-      .then(json =>
-        this.setState({ lambdaLoading: false, lambdaMessage: json.msg })
-      );
+      .then(function(json) {
+        this.setState({ lambdaLoading: false, lambdaMessage: json.msg });
+      });
     console.log("Submit function");
   };
 
