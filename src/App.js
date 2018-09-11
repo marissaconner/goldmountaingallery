@@ -50,8 +50,8 @@ const ListTestimonials = () => (
 );
 
 const MainGalleryContainer = () => (
-  <div>
-    <p>Main gallery container</p>
+  <div class="container">
+    <h2 className="text-center">Beautiful Things</h2>
     <MainGallery artistData={artistData} />
   </div>
 );

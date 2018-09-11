@@ -30,21 +30,21 @@ class MainGallery extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.images.map(image => (
-          <div>
-            <img
-              className="img-responsive"
-              src={`/img/artists/${image.artistid}/${image.src}`}
-              alt={image.alt}
-            />
-          </div>
-        ))}
+      <div className="row text-center" id="gmg-artist-gallery">
+        <div className="col-md-12">
+          {this.state.images.map(image => (
+            <div className="gmg-artist-gallery-thumbnail">
+              <img
+                className="img-responsive"
+                src={`/img/artists/${image.artistid}/${image.src}`}
+                alt={image.alt}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
 }
-
-const MainGalleryEntry = () => <div>Gallery Entry</div>;
 
 export default MainGallery;
