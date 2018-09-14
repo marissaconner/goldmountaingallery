@@ -137,11 +137,12 @@ class Contact extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(function(json) {
-        this.setState({ lambdaLoading: false, lambdaMessage: json.msg });
-      });
+    }).then(function(response) {
+      console.log("Response received");
+      console.log(response.status);
+      if ((response.status = 200)) {
+      }
+    });
     console.log("Submit function");
   };
 
@@ -150,78 +151,99 @@ class Contact extends Component {
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
-        <p>{lambdaLoading ? "Loading..." : "Call Lambda"}</p>
-        <p>{lambdaMessage}</p>
-        <form onSubmit={this.handleSubmit} className="form">
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.name
-            )}`}
-          >
-            <label htmlFor="guest-name">Your Name</label>
-            <input
-              className="form-control"
-              type="text"
-              name="name"
-              value={this.state.name}
-              id="guest-name"
-              onChange={this.handleInput}
-            />
-          </div>
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.email
-            )}`}
-          >
-            <label htmlFor="guest-email">Your Email Address</label>
-            <input
-              className="form-control"
-              type="email"
-              value={this.state.email}
-              name="email"
-              id="guest-email"
-              onChange={this.handleInput}
-            />
-          </div>
+        <div className="row">
+          <div className="col-md-3">
+            <h3>Call</h3>
+            <div className="gmg-phone">
+              <a href="tel:9145848333">
+                <strong>Mark Goldberg:</strong> 914 584 8333
+              </a>
+            </div>
 
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.subject
-            )}`}
-          >
-            <label htmlFor="guest-subject">Subject</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.subject}
-              name="subject"
-              id="guest-subject"
-              onChange={this.handleInput}
-            />
-          </div>
+            <h3>Visit</h3>
+            <p>135 W. Colorado Avenue</p>
+            <p>Telluride, CO 81435</p>
 
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.message
-            )}`}
-          >
-            <label htmlFor="guest-message">Message</label>
-            <textarea
-              className="form-control"
-              name="message"
-              value={this.state.message}
-              id="guest-message"
-              onChange={this.handleInput}
-            />
+            <h3>Ship</h3>
+            <p>PO Box 4013</p>
+            <p>Telluride, CO 81435</p>
           </div>
-          <button
-            className="btn btn-default"
-            type="submit"
-            disabled={!this.state.formValid}
-          >
-            Send
-          </button>
-        </form>
+          <div className="col-md-9">
+            <h3>Email</h3>
+            <p>{lambdaLoading ? "Loading..." : "Call Lambda"}</p>
+            <p>{lambdaMessage}</p>
+            <form onSubmit={this.handleSubmit} className="form">
+              <div
+                className={`form-group ${this.hasErrorClass(
+                  this.state.formErrors.name
+                )}`}
+              >
+                <label htmlFor="guest-name">Your Name</label>
+                <input
+                  className="form-control"
+                  type="text"
+                  name="name"
+                  value={this.state.name}
+                  id="guest-name"
+                  onChange={this.handleInput}
+                />
+              </div>
+              <div
+                className={`form-group ${this.hasErrorClass(
+                  this.state.formErrors.email
+                )}`}
+              >
+                <label htmlFor="guest-email">Your Email Address</label>
+                <input
+                  className="form-control"
+                  type="email"
+                  value={this.state.email}
+                  name="email"
+                  id="guest-email"
+                  onChange={this.handleInput}
+                />
+              </div>
+
+              <div
+                className={`form-group ${this.hasErrorClass(
+                  this.state.formErrors.subject
+                )}`}
+              >
+                <label htmlFor="guest-subject">Subject</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={this.state.subject}
+                  name="subject"
+                  id="guest-subject"
+                  onChange={this.handleInput}
+                />
+              </div>
+
+              <div
+                className={`form-group ${this.hasErrorClass(
+                  this.state.formErrors.message
+                )}`}
+              >
+                <label htmlFor="guest-message">Message</label>
+                <textarea
+                  className="form-control"
+                  name="message"
+                  value={this.state.message}
+                  id="guest-message"
+                  onChange={this.handleInput}
+                />
+              </div>
+              <button
+                className="btn btn-default"
+                type="submit"
+                disabled={!this.state.formValid}
+              >
+                Send
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
