@@ -22,7 +22,7 @@ class Contact extends Component {
 
     this.state = {
       lambdaLoading: false,
-      lamdaMessage: null,
+      lambdaMessage: "Lambda Message",
       sendattempted: false,
       sendsuccessful: null,
       name: "",
@@ -127,7 +127,8 @@ class Contact extends Component {
 
     var data = {
       subject: this.state.subject,
-      message: bodymessage
+      message: bodymessage,
+      replyto: this.state.email
     };
 
     this.setState({ lambdaLoading: true });
@@ -139,8 +140,9 @@ class Contact extends Component {
       body: JSON.stringify(data)
     }).then(function(response) {
       console.log("Response received");
-      console.log(response.status);
-      if ((response.status = 200)) {
+      console.log(response);
+      if (response.status === 200) {
+        console.log("OK now we tell the user everything is jiggy");
       }
     });
     console.log("Submit function");
