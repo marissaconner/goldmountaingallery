@@ -24,6 +24,7 @@ class Contact extends Component {
       lambdaLoading: false,
       sendAttempted: false,
       sendSuccessful: null,
+      errorMessage: null,
       name: "",
       nameValid: false,
       email: "",
@@ -107,6 +108,13 @@ class Contact extends Component {
     );
   }
 
+  resetForm = e => {
+    this.setState({
+      sendAttempted: false,
+      sendSuccessful: false
+    });
+  };
+
   handleInput = e => {
     const name = e.target.name;
     const value = e.target.value;
@@ -143,17 +151,23 @@ class Contact extends Component {
         return response.json();
       })
       .then(data => {
-        console.log(data);
-        this.setState({ sendSuccessful: true, lambdaLoading: false });
-      })
-      .catch(function(error) {
-        this.setState({ sendSuccessful: false, lambdaLoading: false });
-        console.log(JSON.stringify(error));
+        this.setState({ lambdaLoading: false });
+        if (data.statusCode === 200) {
+          this.setState({ sendSuccessful: true });
+        } else {
+          this.setState({ sendSuccessful: false });
+        }
+        this.setState({ errorMessage: data.message });
       });
   };
 
   render() {
-    const { sendAttempted, sendSuccessful, lambdaLoading } = this.state;
+    const {
+      sendAttempted,
+      sendSuccessful,
+      lambdaLoading,
+      errorMessage
+    } = this.state;
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
@@ -186,21 +200,34 @@ class Contact extends Component {
                     <div>
                       {sendSuccessful ? (
                         <div>
-                          <h3>Thank you</h3>
+                          <h4>Thank you!</h4>
                           <p>
                             Your message has been sent and will be arriving in
                             our inbox shortly. Thanks again for contacting us.
                             We will reach out to you as soon as possible.
                           </p>
+                          <button
+                            className="btn btn-default"
+                            onClick={this.resetForm}
+                          >
+                            Send another message
+                          </button>
                         </div>
                       ) : (
                         <div>
-                          <h3>Whoops...</h3>
+                          <h4>Whoops...</h4>
                           <p>
                             It appears that something went wrong and your
                             message has not been sent. We're sorry for the
-                            inconvenience. In the meantime, you can send an
-                            email to mark @ goldmountaingallery.com.
+                            inconvenience. In the meantime, you can send your
+                            message to <b>mark @ goldmountaingallery.com.</b>
+                          </p>
+                          <p>
+                            If you want to tell us about the error, please send
+                            this information to us:
+                          </p>
+                          <p>
+                            <b>Error Message:</b> {errorMessage}
                           </p>
                         </div>
                       )}
@@ -208,80 +235,78 @@ class Contact extends Component {
                   )}
                 </div>
               ) : (
-                <div>Yet to send.</div>
+                <form onSubmit={this.handleSubmit} className="form">
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.name
+                    )}`}
+                  >
+                    <label htmlFor="guest-name">Your Name</label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      name="name"
+                      value={this.state.name}
+                      id="guest-name"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.email
+                    )}`}
+                  >
+                    <label htmlFor="guest-email">Your Email Address</label>
+                    <input
+                      className="form-control"
+                      type="email"
+                      value={this.state.email}
+                      name="email"
+                      id="guest-email"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.subject
+                    )}`}
+                  >
+                    <label htmlFor="guest-subject">Subject</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={this.state.subject}
+                      name="subject"
+                      id="guest-subject"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.message
+                    )}`}
+                  >
+                    <label htmlFor="guest-message">Message</label>
+                    <textarea
+                      className="form-control"
+                      name="message"
+                      value={this.state.message}
+                      id="guest-message"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+                  <button
+                    className="btn btn-default"
+                    type="submit"
+                    disabled={!this.state.formValid}
+                  >
+                    Send
+                  </button>
+                </form>
               )}
             </div>
-
-            <form onSubmit={this.handleSubmit} className="form">
-              <div
-                className={`form-group ${this.hasErrorClass(
-                  this.state.formErrors.name
-                )}`}
-              >
-                <label htmlFor="guest-name">Your Name</label>
-                <input
-                  className="form-control"
-                  type="text"
-                  name="name"
-                  value={this.state.name}
-                  id="guest-name"
-                  onChange={this.handleInput}
-                />
-              </div>
-              <div
-                className={`form-group ${this.hasErrorClass(
-                  this.state.formErrors.email
-                )}`}
-              >
-                <label htmlFor="guest-email">Your Email Address</label>
-                <input
-                  className="form-control"
-                  type="email"
-                  value={this.state.email}
-                  name="email"
-                  id="guest-email"
-                  onChange={this.handleInput}
-                />
-              </div>
-
-              <div
-                className={`form-group ${this.hasErrorClass(
-                  this.state.formErrors.subject
-                )}`}
-              >
-                <label htmlFor="guest-subject">Subject</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  value={this.state.subject}
-                  name="subject"
-                  id="guest-subject"
-                  onChange={this.handleInput}
-                />
-              </div>
-
-              <div
-                className={`form-group ${this.hasErrorClass(
-                  this.state.formErrors.message
-                )}`}
-              >
-                <label htmlFor="guest-message">Message</label>
-                <textarea
-                  className="form-control"
-                  name="message"
-                  value={this.state.message}
-                  id="guest-message"
-                  onChange={this.handleInput}
-                />
-              </div>
-              <button
-                className="btn btn-default"
-                type="submit"
-                disabled={!this.state.formValid}
-              >
-                Send
-              </button>
-            </form>
           </div>
         </div>
       </div>

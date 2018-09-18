@@ -15,7 +15,11 @@ export function handler(event, context, awsCallback) {
 
   var eParams = {
     Destination: {
-      ToAddresses: ["marissafromtexas@gmail.com"]
+      ToAddresses: [
+        "mark@goldmountaingallery.com",
+        "scott@goldmountaingallery.com",
+        "marissafromtexas@gmail.com"
+      ]
     },
     Message: {
       Body: {
@@ -37,14 +41,20 @@ export function handler(event, context, awsCallback) {
     function(data) {
       awsCallback(null, {
         statusCode: 200,
-        body: JSON.stringify({ msg: "Email sent." }),
+        body: JSON.stringify({ message: "Email sent." }),
         headers: {
           "Content-Type": "application/json"
         }
       });
     },
     function(error) {
-      awsCallback(error);
+      awsCallback(null, {
+        statusCode: 500,
+        body: JSON.stringify(error),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
     }
   );
 }
