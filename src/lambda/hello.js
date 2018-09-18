@@ -1,11 +1,12 @@
+require("dotenv").config();
 var aws = require("aws-sdk");
-aws.config.loadFromPath("./config.json");
 
-var headers = null;
 var ses = new aws.SES({
-  region: "us-west-2"
+  region: "us-west-2",
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
 });
-
+var headers = null;
 export function handler(event, context, awsCallback) {
   console.log(event);
   headers = event.headers;
