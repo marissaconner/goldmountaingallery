@@ -21,8 +21,6 @@ class Contact extends Component {
     super(props);
 
     this.state = {
-      lambdaLoading: false,
-      lambdaMessage: "Lambda Message",
       sendattempted: false,
       sendsuccessful: null,
       name: "",
@@ -131,7 +129,7 @@ class Contact extends Component {
       replyto: this.state.email
     };
 
-    this.setState({ lambdaLoading: true });
+    this.setState({ sendattempted: true });
     fetch("/.netlify/functions/hello", {
       method: "POST",
       headers: {
@@ -145,7 +143,9 @@ class Contact extends Component {
       })
       .then(data => {
         console.log(data);
-        this.setState({ lambdaLoading: false });
+        if (data.msg === "Email sent.") {
+          this.setState({ sendsuccessful: true });
+        }
       })
       .catch(function(error) {
         console.log(JSON.stringify(error));
@@ -153,7 +153,7 @@ class Contact extends Component {
   };
 
   render() {
-    const { lambdaLoading, lambdaMessage } = this.state;
+    const { sendattempted, sendsuccessful } = this.state;
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
@@ -176,8 +176,36 @@ class Contact extends Component {
           </div>
           <div className="col-md-9">
             <h3>Email</h3>
-            <p>{lambdaLoading ? "Loading..." : "Call Lambda"}</p>
-            <p>{lambdaMessage}</p>
+
+            <div>
+              {sendattempted ? (
+                <div>
+                  {sendsuccessful ? (
+                    <div>
+                      <h3>Thank you</h3>
+                      <p>
+                        Your message has been sent and will be arriving in our
+                        inbox shortly. Thanks again for contacting us. We will
+                        reach out to you as soon as possible.
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      <h3>Whoops...</h3>
+                      <p>
+                        It appears that something went wrong and your message
+                        has not been sent. We're sorry for the inconvenience. In
+                        the meantime, you can send an email to mark @
+                        goldmountaingallery.com.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div>Yet to send.</div>
+              )}
+            </div>
+
             <form onSubmit={this.handleSubmit} className="form">
               <div
                 className={`form-group ${this.hasErrorClass(
