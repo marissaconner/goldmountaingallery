@@ -21,8 +21,9 @@ class Contact extends Component {
     super(props);
 
     this.state = {
-      sendattempted: false,
-      sendsuccessful: null,
+      lambdaLoading: false,
+      sendAttempted: false,
+      sendSuccessful: null,
       name: "",
       nameValid: false,
       email: "",
@@ -129,7 +130,7 @@ class Contact extends Component {
       replyto: this.state.email
     };
 
-    this.setState({ sendattempted: true });
+    this.setState({ sendAttempted: true, lambdaLoading: true });
     fetch("/.netlify/functions/hello", {
       method: "POST",
       headers: {
@@ -143,17 +144,16 @@ class Contact extends Component {
       })
       .then(data => {
         console.log(data);
-        if (data.msg === "Email sent.") {
-          this.setState({ sendsuccessful: true });
-        }
+        this.setState({ sendSuccessful: true, lambdaLoading: false });
       })
       .catch(function(error) {
+        this.setState({ sendSuccessful: false, lambdaLoading: false });
         console.log(JSON.stringify(error));
       });
   };
 
   render() {
-    const { sendattempted, sendsuccessful } = this.state;
+    const { sendAttempted, sendSuccessful, lambdaLoading } = this.state;
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
@@ -178,26 +178,32 @@ class Contact extends Component {
             <h3>Email</h3>
 
             <div>
-              {sendattempted ? (
+              {sendAttempted ? (
                 <div>
-                  {sendsuccessful ? (
-                    <div>
-                      <h3>Thank you</h3>
-                      <p>
-                        Your message has been sent and will be arriving in our
-                        inbox shortly. Thanks again for contacting us. We will
-                        reach out to you as soon as possible.
-                      </p>
-                    </div>
+                  {lambdaLoading ? (
+                    <div>Loading...</div>
                   ) : (
                     <div>
-                      <h3>Whoops...</h3>
-                      <p>
-                        It appears that something went wrong and your message
-                        has not been sent. We're sorry for the inconvenience. In
-                        the meantime, you can send an email to mark @
-                        goldmountaingallery.com.
-                      </p>
+                      {sendSuccessful ? (
+                        <div>
+                          <h3>Thank you</h3>
+                          <p>
+                            Your message has been sent and will be arriving in
+                            our inbox shortly. Thanks again for contacting us.
+                            We will reach out to you as soon as possible.
+                          </p>
+                        </div>
+                      ) : (
+                        <div>
+                          <h3>Whoops...</h3>
+                          <p>
+                            It appears that something went wrong and your
+                            message has not been sent. We're sorry for the
+                            inconvenience. In the meantime, you can send an
+                            email to mark @ goldmountaingallery.com.
+                          </p>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
