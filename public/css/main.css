@@ -1,56 +1,100 @@
-p, h1, h2, h3, h4, h5, h6{
+html,
+body {
+  height: 100%;
+}
+#root {
+  min-height: 100%;
+  position: relative;
+}
+
+#gmg-app {
+  min-height: 100%;
+}
+#gmg-body {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 48px;
+}
+
+#gmg-footer {
+  background-color: #433409;
+  color: #ffffff;
+  padding: 1em;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 48px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #433409;
 }
 p {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 16px;
   font-weight: 300;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
-a{
+a {
   text-decoration: none;
   color: #ffa302;
 }
-a:hover{
+a:hover {
   text-decoration: none;
   color: #e89300;
 }
 
-section{
+section {
   margin-top: 1em;
   margin-bottom: 1em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 2px;
-  font-family: 'Montserrat Black', serif;
+  font-family: "Montserrat Black", serif;
   font-weight: 700;
 }
 
-#gmg-header{
+#gmg-header {
   margin: 1em 0;
 }
 #gmg-masthead {
-  display: inline-block;  
+  display: inline-block;
   vertical-align: middle;
-  width: 125px
+  width: 125px;
 }
-#gmg-nav-menu{
+#gmg-nav-menu {
   display: inline-block;
 }
-@media only screen and (max-width: 992px){
-  #gmg-masthead, #gmg-nav-menu{
+@media only screen and (max-width: 992px) {
+  #gmg-masthead,
+  #gmg-nav-menu {
     display: block;
     margin: 0 auto;
   }
-  #gmg-header{
-    margin: .5em 0;
+  #gmg-header {
+    margin: 0.5em 0;
   }
 }
-@media only screen and (max-width: 767px){
-  #gmg-masthead{ 
-    float: left; 
-    z-index: 99; 
+@media only screen and (max-width: 767px) {
+  #gmg-masthead {
+    float: left;
+    z-index: 99;
     left: 0.5em;
     width: 68px;
   }
@@ -58,31 +102,35 @@ h1, h2, h3, h4, h5, h6 {
 
 #gmg-nav {
   display: inline-block;
-  font-family: 'Montserrat', serif;
+  font-family: "Montserrat", serif;
   vertical-align: middle;
   text-transform: uppercase;
   font-weight: 900;
   letter-spacing: 2px;
   margin: 0;
 }
-#gmg-nav .dropdown-toggle, #gmg-nav a{
+#gmg-nav .dropdown-toggle,
+#gmg-nav a {
   color: #433409;
 }
-#gmg-nav .dropdown-toggle:hover, #gmg-nav a:hover {
+#gmg-nav .dropdown-toggle:hover,
+#gmg-nav a:hover {
   color: #ffa302;
   text-decoration: none;
 }
 
 /* Mobile nav bar icon, animated */
-.navbar-toggle,.navbar-toggle:hover, .navbar-toggle:focus {
+.navbar-toggle,
+.navbar-toggle:hover,
+.navbar-toggle:focus {
   border: none;
   background: none;
 }
 .navbar-toggle .icon-bar {
-    width: 20px;
-    border-bottom: 3px solid #433409;
-    display: block;
-    transition: all 0.2s;
+  width: 20px;
+  border-bottom: 3px solid #433409;
+  display: block;
+  transition: all 0.2s;
 }
 .navbar-toggle .top-bar {
   transform: rotate(45deg);
@@ -106,16 +154,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 /*End mobile nav bar icon*/
 
-#gmg-footer{
-  background-color: #433409;
-  color: #ffffff;
-  padding: 1em;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -124,37 +162,38 @@ nav ul li {
   display: inline-block;
   margin: 0 1em;
 }
-nav ul li:hover{
+nav ul li:hover {
   cursor: pointer;
   cursor: hand;
 }
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
   color: #433409;
-  background: rgba(255,255,255,.75);
+  background: rgba(255, 255, 255, 0.75);
   transition: all 0.25s ease;
 }
-.dropdown-menu{
-  background: linear-gradient(to top,#fffaf2, #ffa302);
+.dropdown-menu {
+  background: linear-gradient(to top, #fffaf2, #ffa302);
   border-radius: 0;
-  padding:1em 0;
-  margin:0;
+  padding: 1em 0;
+  margin: 0;
 }
 .dropdown-menu li {
   padding: 0;
-  margin:0;
+  margin: 0;
   display: block;
 }
 .navbar-nav li:hover > ul.dropdown-menu {
-    display: block;
+  display: block;
 }
-.navbar-collapse.in{
+.navbar-collapse.in {
   overflow-y: visible;
 }
 
-#gmg-main-splash{
+#gmg-main-splash {
   background-image: url("./img/gold-moutain-gallery-splash.jpg");
   background: #473724;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-position: center center;
   padding: 12rem;
   text-align: center;
@@ -163,34 +202,57 @@ nav ul li:hover{
   position: relative;
 }
 
-#gmg-main-splash h1{ font-size: 6rem; letter-spacing: 5px; }
-#gmg-main-splash p{ font-size: 2.5rem; margin: 0 0 1rem 0; letter-spacing: 3px; }
-#gmg-main-splash h1, #gmg-main-splash p, #gmg-artist-feature p{ color: #ffffff; }
+#gmg-main-splash h1 {
+  font-size: 6rem;
+  letter-spacing: 5px;
+}
+#gmg-main-splash p {
+  font-size: 2.5rem;
+  margin: 0 0 1rem 0;
+  letter-spacing: 3px;
+}
+#gmg-main-splash h1,
+#gmg-main-splash p,
+#gmg-artist-feature p {
+  color: #ffffff;
+}
 
-  @media only screen and (max-width: 992px){
-    #gmg-main-splash{ padding: 9rem; }
-    #gmg-main-splash h1{ font-size: 4rem; letter-spacing: 5px; }
-    #gmg-main-splash p{ font-size: 2rem; margin: 0 0 1rem 0; letter-spacing: 3px; }
+@media only screen and (max-width: 992px) {
+  #gmg-main-splash {
+    padding: 9rem;
   }
-  @media only screen and (max-width: 767px){
-    #gmg-main-splash{ padding: 3rem; margin-bottom: 0; }
+  #gmg-main-splash h1 {
+    font-size: 4rem;
+    letter-spacing: 5px;
   }
+  #gmg-main-splash p {
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    letter-spacing: 3px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #gmg-main-splash {
+    padding: 3rem;
+    margin-bottom: 0;
+  }
+}
 
 .gmg-infotiles {
   margin: 1em 0;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-.gmg-infotiles a{
+.gmg-infotiles a {
   color: #473724;
   display: block;
-  margin: .5em;
+  margin: 0.5em;
 }
 
-.display-on-dark{
-  font-family: 'Montserrat Black', serif;
+.display-on-dark {
+  font-family: "Montserrat Black", serif;
   font-style: normal;
   font-size: 3rem;
   color: #ffffff;
@@ -198,12 +260,12 @@ nav ul li:hover{
   text-shadow: -1px 1px 3px #000000;
   text-transform: uppercase;
 }
-.body-on-dark{
+.body-on-dark {
   letter-spacing: 2px;
   text-shadow: -1px 1px 3px #000000;
   color: #ffffff;
 }
-#gmg-artist-feature-inner{
+#gmg-artist-feature-inner {
   background: #555;
   padding: 2rem;
   font-size: 1.75rem;
@@ -211,26 +273,27 @@ nav ul li:hover{
   background-position: top right;
   position: relative;
 }
-.sm-overlay{
+.sm-overlay {
   position: absolute;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
-@media only screen and (max-width:992px){
-  .sm-overlay{ background-color: rgba(25,20,0,.25); }
+@media only screen and (max-width: 992px) {
+  .sm-overlay {
+    background-color: rgba(25, 20, 0, 0.25);
+  }
 }
-#gmg-artist-feature p{
-  margin:0 0 1rem 0;
+#gmg-artist-feature p {
+  margin: 0 0 1rem 0;
   letter-spacing: 2.5px;
-  
 }
-#gmg-link-tiles.row{
-  margin-top: .5em;
+#gmg-link-tiles.row {
+  margin-top: 0.5em;
   text-align: center;
 }
-#gmg-link-tiles a{
+#gmg-link-tiles a {
   border: 1px solid #c4c4c4;
   margin: 1rem;
   width: 175px;
@@ -239,7 +302,7 @@ nav ul li:hover{
   background: #555;
   color: #ffffff;
   text-align: center;
-  line-height:175px;
+  line-height: 175px;
   letter-spacing: 2px;
   font-size: 2rem;
   text-shadow: 1px 1px 5px #000000;
@@ -247,70 +310,69 @@ nav ul li:hover{
   background-size: contain;
 }
 
-
-
-#gmg-link-tiles a:first-of-type{
+#gmg-link-tiles a:first-of-type {
   margin-left: 0;
 }
 
-#gmg-link-tiles a:hover{
-  }
-
-.btn{
-  border-radius: 0;
-  margin: .5em;
+#gmg-link-tiles a:hover {
 }
-.btn-ghost{
+
+.btn {
+  border-radius: 0;
+  margin: 0.5em;
+}
+.btn-ghost {
   border: 1px solid #ffffff;
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 3px;
 }
-.btn-ghost:hover{
+.btn-ghost:hover {
   background-color: #ffffff;
-  color:  #433409;
+  color: #433409;
   text-shadow: 1px 1px 1px #c4c4c4;
 }
-.italic { font-style: italic; }
+.italic {
+  font-style: italic;
+}
 
-.nav>li>a:focus, .nav>li>a:hover{
+.nav > li > a:focus,
+.nav > li > a:hover {
   background-color: #ffffff !important;
 }
 
 /* ARTIST PAGE CSS */
-#gmg-artist-portrait{
-  margin-left:0;
+#gmg-artist-portrait {
+  margin-left: 0;
   padding-left: 0;
 }
-#gmg-artist-heading{
+#gmg-artist-heading {
   padding: 3em;
   margin-bottom: 1em;
   background: #433409;
   text-align: center;
   color: #ffffff;
   text-shadow: 2px 2px 5px #000000;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
- 
 }
-#gmg-artist-name{
+#gmg-artist-name {
   margin: 0;
   font-size: 3em;
   text-transform: uppercase;
   color: #ffffff;
   letter-spacing: 6px;
 }
-#gmg-artist-tagline{
-  font-family: 'Playfair Display';
+#gmg-artist-tagline {
+  font-family: "Playfair Display";
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 3px;
 }
 
-
-.gmg-artist-gallery-thumbnail{
+.gmg-artist-gallery-thumbnail {
   width: 300px;
   height: 200px;
   overflow: hidden;
@@ -320,14 +382,14 @@ nav ul li:hover{
   margin: 1em;
 }
 
-#gmg-gallery-modal{
+#gmg-gallery-modal {
   margin: 0 auto;
   text-align: center;
 }
-#gmg-artist-carousel{
-  max-width: 900px; 
-  box-shadow: 2px 2px 5px rgba(0,0,0,.5);
-  pointer-events: all; 
+#gmg-artist-carousel {
+  max-width: 900px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  pointer-events: all;
   margin: auto;
   transition: all 0.25s ease;
 }
@@ -336,7 +398,7 @@ nav ul li:hover{
 .carousel-inner .item {
   opacity: 0;
   transition: opacity 1s ease-in-out, height 1s;
-  transform: translate3d(0,0,0) !important;
+  transform: translate3d(0, 0, 0) !important;
   height: auto;
 }
 .carousel-inner .active {
@@ -344,66 +406,70 @@ nav ul li:hover{
   opacity: 1;
   height: auto;
 }
-.center-center-container{
-  display: table; postition: absolute; height: 100%; width: 100%
-  transition: all 0.25s ease; 
+.center-center-container {
+  display: table;
+  postition: absolute;
+  height: 100%;
+  width: 100%;
+  transition: all 0.25s ease;
 }
-.carousel-control.left, .carousel-control.right {
+.carousel-control.left,
+.carousel-control.right {
   background-image: none;
 }
-.vh-align-center{
+.vh-align-center {
   display: table-cell;
   vertical-align: middle;
   pointer-events: none;
 }
-.vh-align-helper{
-  display:table;
+.vh-align-helper {
+  display: table;
   height: 100%;
   width: 100%;
   pointer-events: none;
 }
 
-.testimonialsignature{
+.testimonialsignature {
   margin-top: 1em;
   text-align: right;
   font-style: italic;
 }
-.testimonialsignature p{
+.testimonialsignature p {
   font-weight: bold;
   font-weight: 900;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.artist-link{
+.artist-link {
   display: inline-block;
   background: #c4c4c4;
   margin: 2em;
   width: 250px;
   height: 250px;
-  line-height:250px;
+  line-height: 250px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
   z-index: 99;
 }
-.artist-link-heading:hover:before{
+.artist-link-heading:hover:before {
   position: absolute;
   content: "";
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(255,163,2,.25);
+  background-color: rgba(255, 163, 2, 0.25);
 }
 
-.artist-link-heading{
+.artist-link-heading {
   text-transform: uppercase;
-  font-family: 'Montserrat Black', sans-serif;
+  font-family: "Montserrat Black", sans-serif;
   font-weight: bold;
   font-weight: 900;
   text-align: center;
   letter-spacing: 2px;
   color: #ffffff;
   text-shadow: -1px 1px 3px #000000;
-  }
+}

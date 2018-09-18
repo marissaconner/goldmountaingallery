@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, BrowserRouter, Route, Link } from "react-router-dom";
-import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
@@ -50,7 +49,7 @@ const ListTestimonials = () => (
 );
 
 const App = () => (
-  <div>
+  <div id="gmg-app">
     <div className="container">
       <header id="gmg-header">
         <Navbar />
@@ -79,6 +78,9 @@ const App = () => (
         </Switch>
       </BrowserRouter>
     </div>
+    <footer id="gmg-footer">
+      Copyright &copy; Gold Mountain Gallery. All rights reserved.
+    </footer>
   </div>
 );
 
