@@ -15,11 +15,7 @@ export function handler(event, context, awsCallback) {
 
   var eParams = {
     Destination: {
-      ToAddresses: [
-        "mark@goldmountaingallery.com",
-        "scott@goldmountaingallery.com",
-        "marissafromtexas@gmail.com"
-      ]
+      ToAddresses: ["marissafromtexas@gmail.com"]
     },
     Message: {
       Body: {
@@ -41,7 +37,10 @@ export function handler(event, context, awsCallback) {
     function(data) {
       awsCallback(null, {
         statusCode: 200,
-        body: JSON.stringify({ message: "Email sent." }),
+        body: JSON.stringify({
+          status: 200,
+          message: "Your email was successfully sent."
+        }),
         headers: {
           "Content-Type": "application/json"
         }

@@ -148,11 +148,14 @@ class Contact extends Component {
     })
       .then(function(response) {
         console.log("Response received");
+        console.log(response);
         return response.json();
       })
       .then(data => {
+        console.log("This is the then function with the data part");
+        console.log(data);
         this.setState({ lambdaLoading: false });
-        if (data.statusCode === 200) {
+        if (data.status === 200) {
           this.setState({ sendSuccessful: true });
         } else {
           this.setState({ sendSuccessful: false });
