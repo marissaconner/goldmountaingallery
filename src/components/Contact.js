@@ -138,14 +138,18 @@ class Contact extends Component {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(data)
-    }).then(function(response) {
-      console.log("Response received");
-      console.log(response);
-      if (response.status === 200) {
-        console.log("OK now we tell the user everything is jiggy");
-      }
-    });
-    console.log("Submit function");
+    })
+      .then(function(response) {
+        console.log("Response received");
+        return response.json();
+      })
+      .then(data => {
+        console.log(data);
+        this.setState({ lambdaLoading: false });
+      })
+      .catch(function(error) {
+        console.log(JSON.stringify(error));
+      });
   };
 
   render() {

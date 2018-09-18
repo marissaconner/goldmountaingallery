@@ -33,12 +33,18 @@ export function handler(event, context, awsCallback) {
 
   var sendPromise = ses.sendEmail(eParams).promise();
 
-  sendPromise
-    .then(function(data) {
-      console.log("==Sent?==");
-      console.log(data.messageId);
-    })
-    .catch(function(err) {
-      console.error(err, err.stack);
-    });
+  sendPromise.then(
+    function(data) {
+      awsCallback(null, {
+        statusCode: 200,
+        body: JSON.stringify({ msg: "Email sent." }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+    },
+    function(error) {
+      awsCallback(error);
+    }
+  );
 }
