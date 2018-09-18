@@ -108,13 +108,6 @@ class Contact extends Component {
     );
   }
 
-  resetForm = e => {
-    this.setState({
-      sendAttempted: false,
-      sendSuccessful: false
-    });
-  };
-
   handleInput = e => {
     const name = e.target.name;
     const value = e.target.value;
@@ -209,12 +202,6 @@ class Contact extends Component {
                             our inbox shortly. Thanks again for contacting us.
                             We will reach out to you as soon as possible.
                           </p>
-                          <button
-                            className="btn btn-default"
-                            onClick={this.resetForm}
-                          >
-                            Send another message
-                          </button>
                         </div>
                       ) : (
                         <div>
@@ -300,13 +287,17 @@ class Contact extends Component {
                       onChange={this.handleInput}
                     />
                   </div>
-                  <button
-                    className="btn btn-default"
-                    type="submit"
-                    disabled={!this.state.formValid}
-                  >
-                    Send
-                  </button>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <button
+                        className="btn btn-default btn-block"
+                        type="submit"
+                        disabled={!this.state.formValid}
+                      >
+                        Send
+                      </button>
+                    </div>
+                  </div>
                 </form>
               )}
             </div>
