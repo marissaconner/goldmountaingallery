@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "aws-sdk": "^2.299.0",
+    "babel-loader": "^8.0.2",
     "dotenv": "^6.0.0",
     "eslint-plugin-react": "^7.10.0",
     "html-react-parser": "^0.4.6",
@@ -18,7 +19,6 @@
     "start": "react-scripts start",
     "start:lambda": "netlify-lambda serve src/lambda",
     "build": "react-scripts build",
-    "start:lambda": "netlify-lambda serve src/lambda",
     "build:lambda": "netlify-lambda build src/lambda",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
