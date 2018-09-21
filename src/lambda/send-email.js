@@ -54,7 +54,7 @@ export function handler(event, context, awsCallback) {
     function(error) {
       awsCallback(null, {
         statusCode: 500,
-        body: JSON.stringify({ secretAccessKey: secretAccessKey, accessKeyId: accessKeyId, error: error }),
+        body: JSON.stringify(error),
         headers: {
           "Content-Type": "application/json"
         }
