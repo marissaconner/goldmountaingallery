@@ -1,7 +1,7 @@
 var aws = require("aws-sdk");
 
-var accessKeyId = process.env.AWS_ACCESS_KEY_ID
-var secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY
+var accessKeyId = process.env.AWS_KEY
+var secretAccessKey = process.env.AWS_SECRET
 
 var ses = new aws.SES({
   region: "us-west-2",
