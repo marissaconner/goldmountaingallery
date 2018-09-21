@@ -132,7 +132,7 @@ class Contact extends Component {
     };
 
     this.setState({ sendAttempted: true, lambdaLoading: true });
-    fetch("/.netlify/functions/hello", {
+    fetch("/.netlify/functions/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
