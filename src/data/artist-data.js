@@ -217,10 +217,84 @@ const mattDowner = {
   ]
 };
 
+const kiraFercho = {
+  _id: "kira-fercho",
+  firstName: "Kira",
+  lastName: "Fercho",
+  tagline: "Art Customized For The Home And The Soul",
+  bioText:
+    "<p>Kira's generous application of paint in soulful, texture-rich hues leap out from their canvases to tug on the personal passions of their individual owners:  each of her works are custom-tailored for their space, context and the viewer-to-be. Every piece is crafted after she cutivates a one-on-one relationship with her client, be they a homeowner looking for the perfect statement piece, an architect or interior designer looking to crown their latest contract, or a corporate entrepreneur brightening up her boardroom.</p><p> Her artistic training in Russian Impressionism fills her compositions with a complex study of light and color and offers an almost lyrical feel to her representations of land and life. Her background in Western Tonalism renders her subjects with an evocative, spiritual effect wrought from weaving complex mid-range tones. Her life experiences inspire her subject-matter:  as a native of eastern Montana, Kira grew up with a reverence for the High Plains, its culture, its land and its people.</p><p>&ldquo;Everyone loves the mountains of the West, but not everyone gets to really experience and appreciate the prairies and badlands,&rdquo; she says. &ldquo;From my perspective, as someone who grew up in this environment, the High Plains have equal grandeur and dramatic beauty and maybe even more gradation in color&mdash;so much material to work with.&rdquo; <p>Kira learned how to find her voice from Montana western artist Loren Entz, and a pivotal part of that guidance was embracing the unexpected places that painting can take her brush. &ldquo;Part of the process is stumbling through things,&rdquo; she says.  &ldquo;When I was having trouble making a decision... and eventually we all have to make decisions... he said, &lsquo;Just do it. Move forward even when it gets difficult. At times it is better to make huge mistakes than have small victories.&rdquo;</p>",
+  bannerSrc: "/img/artists/kira-fercho/kira-fercho-banner.jpg",
+  portraitSrc: "/img/artists/kira-fercho/kira-fercho-portrait.jpg",
+  galleryItems: [
+    {
+      imgname: "Wisdom",
+      src: "kira-fercho-wisdom.jpg",
+      alt: "Wisdom by painter Kira Fercho"
+    },
+    {
+      imgname: "Winter Light",
+      src: "kira-fercho-winter-light.jpg",
+      alt: "Winter Light by painter Kira Fercho"
+    },
+    {
+      imgname: "Soulful Simplicity",
+      src: "kira-fercho-soulful-simplicity.jpg",
+      alt: "Soulful Simplicity by painter Kira Fercho"
+    },
+    {
+      imgname: "Soul",
+      src: "kira-fercho-soul.jpg",
+      alt: "Soul by painter Kira Fercho"
+    },
+    {
+      imgname: "Seasonal Changes",
+      src: "kira-fercho-seasonal-changes.jpg",
+      alt: "Seasonal Changes by painter Kira Fercho"
+    },
+    {
+      imgname: "Riders",
+      src: "kira-fercho-riders.jpg",
+      alt: "Riders by painter Kira Fercho"
+    },
+    {
+      imgname: "Rain Dancers",
+      src: "kira-fercho-rain-dancers.jpg",
+      alt: "Rain Dancers by painter Kira Fercho"
+    },
+    {
+      imgname: "Protectors",
+      src: "kira-fercho-protectors.jpg",
+      alt: "Protectors by painter Kira Fercho"
+    },
+    {
+      imgname: "Huckleberry",
+      src: "kira-fercho-huckleberry.jpg",
+      alt: "Huckleberry by painter Kira Fercho"
+    },
+    {
+      imgname: "Fall Is My Favorite Color",
+      src: "kira-fercho-fall-is-my-favorite-color.jpg",
+      alt: "Fall Is My Favorite Color by painter Kira Fercho"
+    },
+    {
+      imgname: "Clint",
+      src: "kira-fercho-clint.jpg",
+      alt: "Clint by painter Kira Fercho"
+    },
+    {
+      imgname: "Autumn Harmony",
+      src: "kira-fercho-autumn-harmony.jpg",
+      alt: "Autumn Harmony by painter Kira Fercho"
+    }
+  ]
+};
+
 const artistData = {
   [mattDowner._id]: mattDowner,
   [michelleMarocco._id]: michelleMarocco,
-  [kaneScheidegger._id]: kaneScheidegger
+  [kaneScheidegger._id]: kaneScheidegger,
+  [kiraFercho._id]: kiraFercho
 };
 
 export default artistData;
