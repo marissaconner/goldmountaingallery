@@ -29,35 +29,15 @@ const Navbar = () => (
               <a>About</a>
               <ul className="dropdown-menu">
                 <li>
-                  <a href="/artists">Our Artists</a>
+                  <a href="/about">About Us</a>
                 </li>
                 <li>
-                  <a href="/testimonials">Testimonials</a>
-                </li>
-              </ul>
-            </li>
-            <li className="dropdown">
-              <a>Beautiful Things</a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a>Fine Artwork</a>
-                </li>
-                <li>
-                  <a>Jewelry</a>
-                </li>
-                <li>
-                  <a>Lighting</a>
-                </li>
-                <li>
-                  <a>Photography</a>
-                </li>
-                <li>
-                  <a>Woodworking</a>
+                  <a href="/artists">Meet Our Artists</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a>Events</a>
+              <a href="/gallery">Gallery</a>
             </li>
             <li>
               <a href="/contact">Get In Touch</a>
