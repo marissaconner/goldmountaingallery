@@ -170,11 +170,16 @@ class Contact extends Component {
         <div className="row">
           <div className="col-md-3">
             <h3>Call</h3>
-            <div className="gmg-phone">
+            <p>
               <a href="tel:9145848333">
-                <strong>Mark Goldberg:</strong> 914 584 8333
+                <strong>Mark:</strong> 914 584 8333
               </a>
-            </div>
+            </p>
+            <p>
+              <a href="tel:9145848333">
+                <strong>Scott:</strong> 970 708 1321
+              </a>
+            </p>
 
             <h3>Visit</h3>
             <p>135 W. Colorado Avenue</p>
@@ -184,7 +189,7 @@ class Contact extends Component {
             <p>PO Box 4013</p>
             <p>Telluride, CO 81435</p>
           </div>
-          <div className="col-md-9">
+          <div className="col-md-9 section">
             <h3>Email</h3>
 
             <div>
@@ -290,11 +295,11 @@ class Contact extends Component {
                   <div className="row">
                     <div className="col-md-12">
                       <button
-                        className="btn btn-default btn-block"
+                        className="btn btn-gold btn-block"
                         type="submit"
                         disabled={!this.state.formValid}
                       >
-                        Send
+                        Talk To Us
                       </button>
                     </div>
                   </div>
