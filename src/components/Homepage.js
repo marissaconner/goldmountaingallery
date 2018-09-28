@@ -16,79 +16,68 @@ const Homepage = ({ featuredArtist }) => (
     </div>
 
     <div className="container">
-      <div id="gmg-artist-feature">
-        <div
-          className="row background-image"
-          id="gmg-artist-feature-inner"
-          style={{
-            backgroundImage: featuredArtist.backgroundImage,
-          }}
-        >
-          <div className="sm-overlay" />
-          <div className="col-md-6 body-on-dark">
-            <p>Featuring</p>
-            <p id="gmg-feature-title" className="display-on-dark">
-              {featuredArtist.name}
-            </p>
-            <p>Hand-made jewelry and fine artwork</p>
-            <a href={featuredArtist.galleryHref} className="btn btn-ghost">
-              Gallery
-            </a>
-          </div>
+      <div className="row section">
+        <div className="col-md-6">
+          <img className="img-responsive" src="img/couch.jpg" />
+        </div>
+        <div className="col-md-6">
+          <h1>Custom-Made And White-Glove Delivered</h1>
+          <p>
+            Think of our gallery as a portfolio of possibilities: we want to
+            create a piece that is uniquely you, that makes a statement and has
+            a personal story from your experiences collaborating with us.
+          </p>
+          <p>
+            Our furniture, decor and accessories each are one of a kind original
+            works made with the height of craftsmanship and artistry, the
+            options limited only by your imagination.
+          </p>
+          <p>
+            We do anything &mdash; and we do mean anything. Pool tables, sofa
+            sectionals, chandeliers, kitchen utensils, it doesn't matter: we
+            just make beautiful things.
+          </p>
+          <p className="text-center">
+            Looking for the perfect piece? Want to learn more?
+          </p>
+          <a href="/contact" className="btn btn-block btn-gold">
+            Get In Touch
+          </a>
         </div>
       </div>
 
-      <div className="row" id="gmg-link-tiles">
-        <a style={{ backgroundImage: "url( img/jewelry.jpg )" }}>
-          Jewelry
-        </a>
-        <a style={{ backgroundImage: "url( img/artwork.jpg )" }}>
-          Fine Art
-        </a>
+      <div className="row section" id="gmg-link-tiles">
+        <a style={{ backgroundImage: "url( img/jewelry.jpg )" }}>Jewelry</a>
+        <a style={{ backgroundImage: "url( img/artwork.jpg )" }}>Fine Art</a>
         <a style={{ backgroundImage: "url( img/photography.jpg )" }}>
           Photography
         </a>
-        <a style={{ backgroundImage: "url( img/lighting.jpg )" }}>
-          Lighting
-        </a>
+        <a style={{ backgroundImage: "url( img/lighting.jpg )" }}>Lighting</a>
         <a style={{ backgroundImage: "url( img/woodworking.jpg )" }}>
-          Woodworking
+          Furniture
         </a>
+        <a style={{ backgroundImage: "url( img/decor.jpg )" }}>Decor</a>
       </div>
 
-      <div className="row text-center">
-        <div className="col-md-12">
-          <h1>Lorem Ipsum</h1>
-          <p>
-            In publishing and graphic design, lorem ipsum is a placeholder text
-            commonly used to demonstrate the visual form of a document without
-            relying on meaningful content (also called greeking). Replacing the
-            actual content with placeholder text allows designers to design the
-            form of the content before the content itself has been produced.
-          </p>
-          <p>
-            The lorem ipsum text is typically a scrambled section of De finibus
-            bonorum et malorum, a 1st-century BC Latin text by Cicero, with
-            words altered, added, and removed to make it nonsensical, improper
-            Latin.
-          </p>
-        </div>
-      </div>
-
-      <div className="row gmg-infotiles">
+      <div className="row section gmg-infotiles">
         <div className="col-md-3">
           <h3>Call</h3>
-          <a href="tel:1234567890">123 456 7890</a>
+          <a href="tel:91458483330">
+            <b>Mark:</b> 914 584 8333
+          </a>
+          <a href="tel:9707081321">
+            <b>Scott:</b> 970 708 1321
+          </a>
         </div>
         <div className="col-md-3">
-          <h3>Locations</h3>
-          <a>Telluride</a>
-          <a>Ridgway</a>
+          <h3>Location</h3>
+          <p>135 West Colorado Ave</p>
+          <p>Telluride, CO 18435</p>
         </div>
         <div className="col-md-3">
           <h3>Hours</h3>
-          <a>Telluride</a>
-          <a>Ridgway</a>
+          <p>9:00 AM - 5:00 PM</p>
+          <p>And Appointments</p>
         </div>
         <div className="col-md-3">
           <h3>Social</h3>

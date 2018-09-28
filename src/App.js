@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, BrowserRouter, Route, Link } from "react-router-dom";
-import "./App.css";
 
 import Navbar from "./components/Navbar";
 import Homepage from "./components/Homepage";
 import NotFound from "./components/NotFound";
 import Artist from "./components/Artist";
 import Contact from "./components/Contact";
+import AboutUs from "./components/AboutUs.js";
 import Testimonial from "./components/Testimonial";
 import testimonialData from "./data/testimonial-data";
 import artistData from "./data/artist-data";
@@ -24,6 +24,7 @@ const ArtistContainer = ({
 };
 const PickArtist = () => (
   <div className="container text-center">
+    <h1>Meet Our Artists</h1>
     {Object.keys(artistData).map(artist => (
       <Link
         to={`/artist/${artist}`}
@@ -57,7 +58,7 @@ const MainGalleryContainer = () => (
 );
 
 const App = () => (
-  <div>
+  <div id="gmg-app">
     <div className="container">
       <header id="gmg-header">
         <Navbar />
@@ -83,10 +84,14 @@ const App = () => (
           <Route path="/testimonials" component={ListTestimonials} />
           <Route path="/artists" component={PickArtist} />
           <Route path="/artist/:artistId" component={ArtistContainer} />
+          <Route path="/about" component={AboutUs} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>
+    <footer id="gmg-footer">
+      Copyright &copy; Gold Mountain Gallery. All rights reserved.
+    </footer>
   </div>
 );
 

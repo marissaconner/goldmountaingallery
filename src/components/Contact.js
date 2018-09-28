@@ -21,8 +21,10 @@ class Contact extends Component {
     super(props);
 
     this.state = {
-      sendattempted: false,
-      sendsuccessful: null,
+      lambdaLoading: false,
+      sendAttempted: false,
+      sendSuccessful: null,
+      errorMessage: null,
       name: "",
       nameValid: false,
       email: "",
@@ -116,92 +118,196 @@ class Contact extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    var data = {};
-    var url = "/api/sendmail";
-    data.name = this.state.name;
-    data.email = this.state.email;
-    data.subject = this.state.subject;
-    data.message = this.state.message;
+    var bodymessage =
+      this.state.name +
+      " is sending you the following message: \r\n\r\n" +
+      this.state.message +
+      "\r\n\r\n To respond, please send an email to: " +
+      this.state.email;
 
-    this.setState({ sendattempted: true });
+    var data = {
+      subject: this.state.subject,
+      message: bodymessage,
+      replyto: this.state.email
+    };
 
-    console.log("Submit function");
+    this.setState({ sendAttempted: true, lambdaLoading: true });
+    fetch("/.netlify/functions/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    })
+      .then(function(response) {
+        console.log("Response received");
+        console.log(response);
+        return response.json();
+      })
+      .then(data => {
+        console.log("This is the then function with the data part");
+        console.log(data);
+        this.setState({ lambdaLoading: false });
+        if (data.status === 200) {
+          this.setState({ sendSuccessful: true });
+        } else {
+          this.setState({ sendSuccessful: false });
+        }
+        this.setState({ errorMessage: data.message });
+      });
   };
 
   render() {
+    const {
+      sendAttempted,
+      sendSuccessful,
+      lambdaLoading,
+      errorMessage
+    } = this.state;
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
-        <form onSubmit={this.handleSubmit} className="form">
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.name
-            )}`}
-          >
-            <label htmlFor="guest-name">Your Name</label>
-            <input
-              className="form-control"
-              type="text"
-              name="name"
-              value={this.state.name}
-              id="guest-name"
-              onChange={this.handleInput}
-            />
-          </div>
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.email
-            )}`}
-          >
-            <label htmlFor="guest-email">Your Email Address</label>
-            <input
-              className="form-control"
-              type="email"
-              value={this.state.email}
-              name="email"
-              id="guest-email"
-              onChange={this.handleInput}
-            />
-          </div>
+        <div className="row">
+          <div className="col-md-3">
+            <h3>Call</h3>
+            <p>
+              <a href="tel:9145848333">
+                <strong>Mark:</strong> 914 584 8333
+              </a>
+            </p>
+            <p>
+              <a href="tel:9145848333">
+                <strong>Scott:</strong> 970 708 1321
+              </a>
+            </p>
 
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.subject
-            )}`}
-          >
-            <label htmlFor="guest-subject">Subject</label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.subject}
-              name="subject"
-              id="guest-subject"
-              onChange={this.handleInput}
-            />
-          </div>
+            <h3>Visit</h3>
+            <p>135 W. Colorado Avenue</p>
+            <p>Telluride, CO 81435</p>
 
-          <div
-            className={`form-group ${this.hasErrorClass(
-              this.state.formErrors.message
-            )}`}
-          >
-            <label htmlFor="guest-message">Message</label>
-            <textarea
-              className="form-control"
-              name="message"
-              value={this.state.message}
-              id="guest-message"
-              onChange={this.handleInput}
-            />
+            <h3>Ship</h3>
+            <p>PO Box 4013</p>
+            <p>Telluride, CO 81435</p>
           </div>
-          <button
-            className="btn btn-default"
-            type="submit"
-            disabled={!this.state.formValid}
-          >
-            Send
-          </button>
-        </form>
+          <div className="col-md-9 section">
+            <h3>Email</h3>
+
+            <div>
+              {sendAttempted ? (
+                <div>
+                  {lambdaLoading ? (
+                    <div>Loading...</div>
+                  ) : (
+                    <div>
+                      {sendSuccessful ? (
+                        <div>
+                          <h4>Thank you!</h4>
+                          <p>
+                            Your message has been sent and will be arriving in
+                            our inbox shortly. Thanks again for contacting us.
+                            We will reach out to you as soon as possible.
+                          </p>
+                        </div>
+                      ) : (
+                        <div>
+                          <h4>Whoops...</h4>
+                          <p>
+                            It appears that something went wrong and your
+                            message has not been sent. We're sorry for the
+                            inconvenience. In the meantime, you can send your
+                            message to <b>mark @ goldmountaingallery.com.</b>
+                          </p>
+                          <p>
+                            If you want to tell us about the error, please send
+                            this information to us:
+                          </p>
+                          <p>
+                            <b>Error Message:</b> {errorMessage}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <form onSubmit={this.handleSubmit} className="form">
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.name
+                    )}`}
+                  >
+                    <label htmlFor="guest-name">Your Name</label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      name="name"
+                      value={this.state.name}
+                      id="guest-name"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.email
+                    )}`}
+                  >
+                    <label htmlFor="guest-email">Your Email Address</label>
+                    <input
+                      className="form-control"
+                      type="email"
+                      value={this.state.email}
+                      name="email"
+                      id="guest-email"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.subject
+                    )}`}
+                  >
+                    <label htmlFor="guest-subject">Subject</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={this.state.subject}
+                      name="subject"
+                      id="guest-subject"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+
+                  <div
+                    className={`form-group ${this.hasErrorClass(
+                      this.state.formErrors.message
+                    )}`}
+                  >
+                    <label htmlFor="guest-message">Message</label>
+                    <textarea
+                      className="form-control"
+                      name="message"
+                      value={this.state.message}
+                      id="guest-message"
+                      onChange={this.handleInput}
+                    />
+                  </div>
+                  <div className="row">
+                    <div className="col-md-12">
+                      <button
+                        className="btn btn-gold btn-block"
+                        type="submit"
+                        disabled={!this.state.formValid}
+                      >
+                        Talk To Us
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
