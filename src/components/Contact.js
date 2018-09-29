@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const formErrors = ({ formErrors }) => (
   <div>
@@ -21,6 +22,7 @@ class Contact extends Component {
     super(props);
 
     this.state = {
+      captchaValid: false,
       lambdaLoading: false,
       sendAttempted: false,
       sendSuccessful: null,
@@ -48,12 +50,14 @@ class Contact extends Component {
   }
 
   validateForm() {
+    console.log("Validating");
     this.setState({
       formValid:
         this.state.nameValid &&
         this.state.emailValid &&
         this.state.subjectValid &&
-        this.state.messageValid
+        this.state.messageValid &&
+        this.state.captchaValid
     });
   }
 
@@ -114,6 +118,20 @@ class Contact extends Component {
     this.setState({ [name]: value }, () => {
       this.validateField(name, value);
     });
+  };
+
+  doCaptcha = e => {
+    console.log("Captcha value:", e);
+    if (e !== null) {
+      console.log("Successful");
+      this.setState({ captchaValid: true }, () => {
+        this.validateForm();
+      });
+    } else {
+      this.setState({ captchaValid: false }, () => {
+        this.validateForm();
+      });
+    }
   };
 
   handleSubmit = e => {
@@ -292,7 +310,13 @@ class Contact extends Component {
                       onChange={this.handleInput}
                     />
                   </div>
-                  <div className="row">
+
+                  <ReCAPTCHA
+                    sitekey="6LdZr3IUAAAAAPmlKvXfIh4bfxjTG1E4w3Wx7NOs"
+                    onChange={this.doCaptcha}
+                  />
+
+                  <div className="row section">
                     <div className="col-md-12">
                       <button
                         className="btn btn-gold btn-block"
