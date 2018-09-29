@@ -1,7 +1,7 @@
 var aws = require("aws-sdk");
 
-var accessKeyId = process.env.AWS_KEY
-var secretAccessKey = process.env.AWS_SECRET
+var accessKeyId = process.env.AWS_KEY;
+var secretAccessKey = process.env.AWS_SECRET;
 
 var ses = new aws.SES({
   region: "us-west-2",
@@ -20,7 +20,10 @@ export function handler(event, context, awsCallback) {
 
   var eParams = {
     Destination: {
-      ToAddresses: ["marissafromtexas@gmail.com"]
+      ToAddresses: [
+        "scott@goldmountaingallery.com",
+        "mark@goldmountaingallery.com"
+      ]
     },
     Message: {
       Body: {
