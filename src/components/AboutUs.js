@@ -7,11 +7,11 @@ const AboutUs = () => (
       <div className="pull-left margins">
         <img
           className="img img-responsive"
-          src="/img/mark-jessica-jonathan.jpg"
-          alt="Matchmaker Jonathan Sweet sits with Jessica and Mark Goldberg"
+          src="/img/mark-and-jessica-goldberg.jpg"
+          alt="Mark and Jessica Goldberg with their children"
         />
         <p class="caption text-center">
-          Matchmaker Jonathan Sweet sits with Jessica and Mark Goldberg.
+          Mark and Jessica Goldberg with their children
         </p>
       </div>
       <p>
