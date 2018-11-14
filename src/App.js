@@ -82,8 +82,8 @@ const App = () => (
           <Route path="/gallery" component={MainGalleryContainer} />
           <Route exact path="/contact" component={Contact} />
           <Route path="/testimonials" component={ListTestimonials} />
-          <Route path="/artists" component={PickArtist} />
-          <Route path="/artist/:artistId" component={ArtistContainer} />
+          {/*<Route path="/artists" component={PickArtist} />
+          <Route path="/artist/:artistId" component={ArtistContainer} />*/}
           <Route path="/about" component={AboutUs} />
           <Route component={NotFound} />
         </Switch>

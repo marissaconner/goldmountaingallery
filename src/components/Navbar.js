@@ -26,15 +26,15 @@ const Navbar = () => (
         <div className="collapse navbar-collapse" id="gmg-nav-options">
           <ul className="nav navbar-nav">
             <li className="dropdown">
-              <a>About</a>
-              <ul className="dropdown-menu">
+              <a href="/about">About Us</a>
+              {/*<ul className="dropdown-menu">
                 <li>
                   <a href="/about">About Us</a>
                 </li>
-                <li>
+                 <li>
                   <a href="/artists">Meet Our Artists</a>
-                </li>
-              </ul>
+                </li> 
+              </ul>*/}
             </li>
             <li>
               <a href="/gallery">Gallery</a>
