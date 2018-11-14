@@ -34,13 +34,13 @@ class MainGallery extends Component {
         <div className="col-md-12">
           {this.state.images.map(image => (
             <div className="gmg-artist-gallery-thumbnail">
-              <a href={`/artist/${image.artistid}`}>
-                <img
-                  className="img-responsive"
-                  src={`/img/artists/${image.artistid}/${image.src}`}
-                  alt={image.alt}
-                />
-              </a>
+              {/* <a href={`/artist/${image.artistid}`}> */}
+              <img
+                className="img-responsive"
+                src={`/img/artists/${image.artistid}/${image.src}`}
+                alt={image.alt}
+              />
+              {/* </a> */}
             </div>
           ))}
         </div>
