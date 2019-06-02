@@ -21,7 +21,6 @@ export function handler(event, context, awsCallback) {
   var eParams = {
     Destination: {
       ToAddresses: [
-        "scott@goldmountaingallery.com",
         "mark@goldmountaingallery.com"
       ]
     },
