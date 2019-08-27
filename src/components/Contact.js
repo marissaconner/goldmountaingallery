@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import queryString from 'query-string';
 
 const formErrors = ({ formErrors }) => (
   <div>
@@ -44,6 +45,12 @@ class Contact extends Component {
       }
     };
   }
+
+  componentDidMount() {
+  const values = queryString.parse(this.props.location.search)
+  console.log(values.item) // 
+  }
+
 
   hasErrorClass(error) {
     return error.length === 0 ? "" : "has-error";
