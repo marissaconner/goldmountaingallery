@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import queryString from 'query-string';
 
 const formErrors = ({ formErrors }) => (
   <div>
@@ -43,6 +44,14 @@ class Contact extends Component {
         message: ""
       }
     };
+  }
+
+  componentDidMount() {
+  const values = queryString.parse(this.props.location.search)
+  console.log(values.item) // 
+  if( values.item != undefined ){
+      this.setState( { message : "Hello, I am interested the " + values.item + " on your web site and would like to learn more about it. Can you tell me more?" })
+  }
   }
 
   hasErrorClass(error) {
@@ -182,12 +191,14 @@ class Contact extends Component {
       lambdaLoading,
       errorMessage
     } = this.state;
+
     return (
       <div className="container">
         <h1 className="text-center">Get In Touch</h1>
         <div className="row">
           <div className="col-md-3">
             <h3>Call</h3>
+            { this.state.item }
             <p>
               <a href="tel:9145848333">
                 <strong>Mark:</strong> 914 584 8333

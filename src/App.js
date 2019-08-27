@@ -22,6 +22,7 @@ const ArtistContainer = ({
   }
   return <Artist artistData={artistData[artistId]} />;
 };
+
 const PickArtist = () => (
   <div className="container text-center">
     <h1>Meet Our Artists</h1>
@@ -80,7 +81,8 @@ const App = () => (
             />
           </Route>
           <Route path="/gallery" component={MainGalleryContainer} />
-          <Route exact path="/contact" component={Contact} />
+          <Route path="contact/:item" component={Contact} />
+          <Route path="/contact" component={Contact} />
           <Route path="/testimonials" component={ListTestimonials} />
           {/*<Route path="/artists" component={PickArtist} />
           <Route path="/artist/:artistId" component={ArtistContainer} />*/}
