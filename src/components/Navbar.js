@@ -74,6 +74,25 @@ const Navbar = () => (
           </ul>
         </nav>
       </div>
+
+      <div className='w-100'>
+      <nav className='navigation closed'>
+        <ul className='navbar__menu'>
+          <li className='nav-item menu__item' style={{paddingLeft: 0, marginLeft: 0}}>
+            <a className='nav-link'  style={{paddingLeft: 0, marginLeft: 0}} href="https://www.goldmountaingallery/products/category/artwork-16/">Artwork</a>
+          </li>
+          <li className='nav-item menu__item'>
+            <a className='nav-link' href="https://www.goldmountaingallery/products/category/furniture-14/">Furniture</a>
+          </li>
+          <li className='nav-item menu__item'>
+            <a className='nav-link' href="https://www.goldmountaingallery/products/category/jewelry-15/">Jewelry</a>
+          </li>
+          <li className='nav-item menu__item'>
+            <a className='nav-link' href="https://www.goldmountaingallery/products/category/lighting-11/">Lighting</a>
+          </li>
+        </ul>
+        </nav>
+      </div>
     </div>
   </header>
 

@@ -50,7 +50,10 @@ class Contact extends Component {
   const values = queryString.parse(this.props.location.search)
   console.log(values.item) // 
   if( values.item != undefined ){
-      this.setState( { message : "Hello, I am interested the " + values.item + " on your web site and would like to learn more about it. Can you tell me more?" })
+      this.setState( { 
+        message : "Hello, I am interested the " + values.item + " on your web site and would like to learn more about it. Can you tell me more?",
+        messageValid: true,
+       })
   }
   }
 

@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 #root {
   min-height: 100%;
@@ -128,8 +129,17 @@ h6 {
   color: rgb(51, 51, 51);
   cursor: text;
   font-weight: 400;
+  font-family: "Montserrat", sans-serif;
 }
 
+label {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  padding-inline-start: 0;
+}
 .navigation ul .nav-item a {
   color: #333;
   transition: 0.3s;
@@ -139,6 +149,8 @@ h6 {
 }
 .nav-link {
   font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
 }
 .form-control::placeholder {
   color: rgb(51, 51, 51);
@@ -433,6 +445,7 @@ blockquote p {
 
 .btn {
   border-radius: 0;
+  font-size: 16px;
 }
 .btn-ghost {
   border: 1px solid #ffffff;
@@ -447,15 +460,17 @@ blockquote p {
   text-shadow: 1px 1px 1px #c4c4c4;
 }
 .btn-gold {
-  background-color: #ffa302;
+  background-color: #c19c3a;
   padding: 0.75em;
-  font-size: 1.25em;
+  font-size: 16px;
   font-family: Montserrat;
   text-transform: uppercase;
   color: #ffffff;
+  letter-spacing: 2px;
 }
 .btn-gold:hover {
-  background-color: #e89300;
+  background-color: #d5ba73;
+  color: rgb(51, 51, 51);
 }
 .italic {
   font-style: italic;
