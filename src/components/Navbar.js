@@ -3,12 +3,12 @@ import React from "react";
 const Navbar = () => (
   <header className="navbar" role="navigation">
   
-    <div className="container d-flex w-100 header navbar__brand">
+    <div className="d-flex w-100 header navbar__brand">
       <div className="menu-icon-mobile d-md-none navbar__brand__menu-toggle closed open">
         <svg data-src="/img/mobile-menu.svg" width="50px" height="31px"/>
       </div>
 
-      <a href="https://www.goldmountaingallery.com/" className="navbar__logo">
+      <a href="https://www.goldmountaingallery.com/" className="navbar__logo" style={{paddingLeft:0}}>
         <img src="/img/gold-mountain-gallery.jpg"/>
       </a>
 

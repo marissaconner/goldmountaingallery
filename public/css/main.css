@@ -76,17 +76,92 @@ h6 {
   font-weight: 700;
 }
 
-#gmg-header {
-  margin: 1em 0;
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  position: relative;
 }
-#gmg-masthead {
-  display: inline-block;
+
+.navbar__brand div,
+.navbar__brand a {
+  padding: 0.625rem;
+}
+
+.navbar__logo img {
+  height: 38px;
+  width: auto;
+  max-width: 113px;
   vertical-align: middle;
-  width: 125px;
 }
-#gmg-nav-menu {
+
+.navbar__brand {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__brand__menu-toggle {
+  vertical-align: super;
+}
+
+.navbar__search {
+  flex: 1 1 auto;
+}
+
+.btn-search {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.form-control {
+  border-radius: 0px;
+  padding: 6px 12px;
+  border: 1px solid #b2a786;
+  height: 36px;
+  font-size: 16px;
+  color: rgb(51, 51, 51);
+  cursor: text;
+  font-weight: 400;
+}
+
+.navigation ul .nav-item a {
+  color: #333;
+  transition: 0.3s;
+  text-transform: uppercase;
   display: inline-block;
+  padding: 0.25rem 0.5rem;
 }
+.nav-link {
+  font-size: 16px;
+}
+.form-control::placeholder {
+  color: rgb(51, 51, 51);
+  letter-spacing: 1.5px;
+}
+.form-control:focus,
+input:focus,
+select:focus {
+  color: #333;
+  border-color: #d3d1d0;
+  background-color: #fffaec;
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(207, 176, 95, 0.25);
+}
+
+@media (min-width: 768px) .d-md-none {
+  display: none !important;
+}
+
+@media (min-width: 576px) .navbar__search {
+  padding: 0.625rem;
+}
+
 @media only screen and (max-width: 992px) {
   #gmg-masthead,
   #gmg-nav-menu {
